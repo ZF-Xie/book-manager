@@ -1,5 +1,6 @@
 #include "dlg_register.h"
 #include "ui_dlg_register.h"
+#include "lib/sql_login.h"
 
 dlg_register::dlg_register(QWidget *parent)
     : QDialog(parent)
@@ -15,7 +16,15 @@ dlg_register::~dlg_register()
 
 void dlg_register::on_btn_confirm_clicked()
 {
-    setResult(1);
+    auto strName = ui->lineEdit->text();
+    auto strPass = ui->lineEdit_2->text();
+    auto ret = sql_login::getInstance()->Register(strName, strPass);
+    qDebug()<<ret;
+    if(ret == 0){
+        setResult(1);
+        return;
+    }
+    setResult(2);
     hide();
 }
 
