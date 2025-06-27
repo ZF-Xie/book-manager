@@ -1,6 +1,6 @@
 <RCC>
     <qresource prefix="/">
         <file>tool.svg</file>
-        <file>返回.svg</file>
+        <file>back.svg</file>
     </qresource>
 </RCC>
