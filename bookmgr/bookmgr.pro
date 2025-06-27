@@ -8,3 +8,9 @@ DESTDIR = $$PWD/../bin
 
 include($$PWD/cell/cell.pri)
 include($$PWD/lib/lib.pri)
+
+RESOURCES += \
+    res/res.qrc
+
+DISTFILES += \
+    res/返回.svg
