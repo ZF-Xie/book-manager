@@ -2,6 +2,7 @@
 #include "ui_cell_main.h"
 #include<QPushButton>
 #include<QtDebug>
+#include <QMessageBox>
 Cell_Main::Cell_Main(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::Cell_Main)
@@ -65,7 +66,7 @@ void Cell_Main::dealMenu()
             break;
         }
 
-        if ("toolButton" == str)
+        if ("btn_reply" == str)
         {
             ui->stackedWidget->setCurrentIndex(3);
             break;
@@ -78,3 +79,13 @@ void Cell_Main::dealMenu()
         }
     }while(false);
 }
+
+void Cell_Main::on_toolButton_2_clicked()
+{
+    QMessageBox::StandardButton reply;
+    reply = QMessageBox::question(this, "确认退出", "确定要退出应用程序吗？",QMessageBox::Yes | QMessageBox::No);
+    if (reply == QMessageBox::Yes) {
+        exit(0);
+    }
+}
+

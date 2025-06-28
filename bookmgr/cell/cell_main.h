@@ -21,6 +21,9 @@ public:
     ~Cell_Main();
     void initPage();
     void dealMenu();
+private slots:
+    void on_toolButton_2_clicked();
+
 private:
     Ui::Cell_Main *ui;
     Cell_UserMgr*m_userPage;

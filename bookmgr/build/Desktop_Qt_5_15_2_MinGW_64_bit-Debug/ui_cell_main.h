@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QSpacerItem>
@@ -30,11 +31,12 @@ public:
     QGridLayout *gridLayout;
     QToolButton *btn_user;
     QToolButton *btn_book;
-    QToolButton *toolButton;
+    QToolButton *btn_reply;
     QSpacerItem *verticalSpacer;
     QToolButton *toolButton_2;
     QToolButton *btn_his;
     QStackedWidget *stackedWidget;
+    QButtonGroup *buttonGroup;
 
     void setupUi(QMainWindow *Cell_Main)
     {
@@ -57,6 +59,9 @@ public:
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         gridLayout->setContentsMargins(0, 0, 0, 0);
         btn_user = new QToolButton(tool);
+        buttonGroup = new QButtonGroup(Cell_Main);
+        buttonGroup->setObjectName(QString::fromUtf8("buttonGroup"));
+        buttonGroup->addButton(btn_user);
         btn_user->setObjectName(QString::fromUtf8("btn_user"));
         QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
         sizePolicy.setHorizontalStretch(0);
@@ -68,31 +73,33 @@ public:
         btn_user->setIcon(icon);
         btn_user->setCheckable(true);
         btn_user->setChecked(true);
-        btn_user->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonTextBesideIcon);
+        btn_user->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
 
         gridLayout->addWidget(btn_user, 2, 1, 1, 2);
 
         btn_book = new QToolButton(tool);
+        buttonGroup->addButton(btn_book);
         btn_book->setObjectName(QString::fromUtf8("btn_book"));
         sizePolicy.setHeightForWidth(btn_book->sizePolicy().hasHeightForWidth());
         btn_book->setSizePolicy(sizePolicy);
         btn_book->setIcon(icon);
         btn_book->setCheckable(true);
-        btn_book->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonTextBesideIcon);
+        btn_book->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
 
         gridLayout->addWidget(btn_book, 3, 1, 1, 2);
 
-        toolButton = new QToolButton(tool);
-        toolButton->setObjectName(QString::fromUtf8("toolButton"));
-        sizePolicy.setHeightForWidth(toolButton->sizePolicy().hasHeightForWidth());
-        toolButton->setSizePolicy(sizePolicy);
-        toolButton->setIcon(icon);
-        toolButton->setCheckable(true);
-        toolButton->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonTextBesideIcon);
+        btn_reply = new QToolButton(tool);
+        buttonGroup->addButton(btn_reply);
+        btn_reply->setObjectName(QString::fromUtf8("btn_reply"));
+        sizePolicy.setHeightForWidth(btn_reply->sizePolicy().hasHeightForWidth());
+        btn_reply->setSizePolicy(sizePolicy);
+        btn_reply->setIcon(icon);
+        btn_reply->setCheckable(true);
+        btn_reply->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
 
-        gridLayout->addWidget(toolButton, 5, 1, 1, 1);
+        gridLayout->addWidget(btn_reply, 5, 1, 1, 1);
 
-        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Expanding, QSizePolicy::Minimum);
+        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
         gridLayout->addItem(verticalSpacer, 7, 1, 1, 1);
 
@@ -101,19 +108,20 @@ public:
         sizePolicy.setHeightForWidth(toolButton_2->sizePolicy().hasHeightForWidth());
         toolButton_2->setSizePolicy(sizePolicy);
         QIcon icon1;
-        icon1.addFile(QString::fromUtf8("../res/back.svg"), QSize(), QIcon::Normal, QIcon::Off);
+        icon1.addFile(QString::fromUtf8(":/back.svg"), QSize(), QIcon::Normal, QIcon::Off);
         toolButton_2->setIcon(icon1);
-        toolButton_2->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonTextBesideIcon);
+        toolButton_2->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
 
         gridLayout->addWidget(toolButton_2, 8, 1, 1, 1);
 
         btn_his = new QToolButton(tool);
+        buttonGroup->addButton(btn_his);
         btn_his->setObjectName(QString::fromUtf8("btn_his"));
         sizePolicy.setHeightForWidth(btn_his->sizePolicy().hasHeightForWidth());
         btn_his->setSizePolicy(sizePolicy);
         btn_his->setIcon(icon);
         btn_his->setCheckable(true);
-        btn_his->setToolButtonStyle(Qt::ToolButtonStyle::ToolButtonTextBesideIcon);
+        btn_his->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
 
         gridLayout->addWidget(btn_his, 4, 1, 1, 2);
 
@@ -137,8 +145,8 @@ public:
         Cell_Main->setWindowTitle(QCoreApplication::translate("Cell_Main", "Cell_Main", nullptr));
         btn_user->setText(QCoreApplication::translate("Cell_Main", " \347\224\250\346\210\267\347\256\241\347\220\206", nullptr));
         btn_book->setText(QCoreApplication::translate("Cell_Main", " \345\233\276\344\271\246\347\256\241\347\220\206", nullptr));
-        toolButton->setText(QCoreApplication::translate("Cell_Main", " \345\233\236\345\244\215\347\225\231\350\250\200", nullptr));
-        toolButton_2->setText(QCoreApplication::translate("Cell_Main", " \350\277\224\345\233\236\347\231\273\345\275\225", nullptr));
+        btn_reply->setText(QCoreApplication::translate("Cell_Main", " \345\233\236\345\244\215\347\225\231\350\250\200", nullptr));
+        toolButton_2->setText(QCoreApplication::translate("Cell_Main", "   \351\200\200\345\207\272", nullptr));
         btn_his->setText(QCoreApplication::translate("Cell_Main", " \345\200\237\351\230\205\350\256\260\345\275\225", nullptr));
     } // retranslateUi
 
