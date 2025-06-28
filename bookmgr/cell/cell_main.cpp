@@ -43,38 +43,38 @@ void Cell_Main::initPage()
 
 void Cell_Main::dealMenu()
 {
-    auto str = qDebug() << sender()->objectName();
+    auto str = sender()->objectName();
 
     do
     {
         if ("btn_user"==str)
         {
             ui->stackedWidget->setCurrentIndex(0);
-            break:
+            break;
         }
 
         if ("btn_book" == str)
         {
             ui->stackedWidget->setCurrentIndex(1);
-            break:
+            break;
         }
 
         if ("btn_his" == str)
         {
             ui->stackedWidget->setCurrentIndex(2);
-            break:
+            break;
         }
 
         if ("toolButton" == str)
         {
             ui->stackedWidget->setCurrentIndex(3);
-            break:
+            break;
         }
 
         if ("toolButton_2" == str)
         {
             ui->stackedWidget->setCurrentIndex(4);
-            break:
+            break;
         }
-    }while(false)
+    }while(false);
 }

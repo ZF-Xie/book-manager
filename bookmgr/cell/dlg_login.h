@@ -16,6 +16,8 @@ public:
     ~Dlg_Login();
 
 private slots:
+    void hide_event();
+
     void on_btn_login_clicked();
 
     void on_btn_register_clicked();

@@ -18,6 +18,7 @@ QString sql_login::Login(QString strUser, QString strPassword)
 {
     QSqlQuery q(m_db);
     QString strSql = QString("select * from user where user_name='%1' and password_hash='%2'").arg(strUser, strPassword);
+    QString strSql1 = QString("select * from user where user_name='%1'").arg(strUser);
     q.exec(strSql);
     bool ret;
     if(q.next())
@@ -28,6 +29,16 @@ QString sql_login::Login(QString strUser, QString strPassword)
     if(!ret)
     {
         strUser = "";
+    }
+    q.exec(strSql1);
+    if(q.next())
+        ret = 1;
+    else
+        ret = 0;
+    qDebug()<<ret;
+    if(ret && strUser == "")
+    {
+        strUser = " " + strUser;
     }
     return strUser;
 }
