@@ -20,7 +20,7 @@ public:
     Cell_Main(QWidget *parent = nullptr);
     ~Cell_Main();
     void initPage();
-
+    void dealMenu();
 private:
     Ui::Cell_Main *ui;
     Cell_UserMgr*m_userPage;
