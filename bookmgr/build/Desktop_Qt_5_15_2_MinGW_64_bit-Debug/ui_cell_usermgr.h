@@ -27,12 +27,11 @@ public:
     QGridLayout *gridLayout;
     QWidget *widget;
     QGridLayout *gridLayout_2;
+    QPushButton *pushButton;
     QPushButton *pushButton_2;
     QLineEdit *lineEdit;
     QLabel *label;
-    QPushButton *pushButton;
     QLabel *label_2;
-    QPushButton *pushButton_3;
     QTableView *tableView;
 
     void setupUi(QWidget *Cell_UserMgr)
@@ -46,6 +45,11 @@ public:
         widget->setObjectName(QString::fromUtf8("widget"));
         gridLayout_2 = new QGridLayout(widget);
         gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
+        pushButton = new QPushButton(widget);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+
+        gridLayout_2->addWidget(pushButton, 1, 0, 1, 1);
+
         pushButton_2 = new QPushButton(widget);
         pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
 
@@ -54,28 +58,18 @@ public:
         lineEdit = new QLineEdit(widget);
         lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
 
-        gridLayout_2->addWidget(lineEdit, 1, 3, 1, 1);
+        gridLayout_2->addWidget(lineEdit, 1, 2, 1, 1);
 
         label = new QLabel(widget);
         label->setObjectName(QString::fromUtf8("label"));
 
-        gridLayout_2->addWidget(label, 1, 4, 1, 1);
-
-        pushButton = new QPushButton(widget);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
-
-        gridLayout_2->addWidget(pushButton, 1, 0, 1, 1);
+        gridLayout_2->addWidget(label, 1, 3, 1, 1);
 
         label_2 = new QLabel(widget);
         label_2->setObjectName(QString::fromUtf8("label_2"));
         label_2->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
-        gridLayout_2->addWidget(label_2, 0, 0, 1, 4);
-
-        pushButton_3 = new QPushButton(widget);
-        pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
-
-        gridLayout_2->addWidget(pushButton_3, 1, 2, 1, 1);
+        gridLayout_2->addWidget(label_2, 0, 0, 1, 3);
 
 
         gridLayout->addWidget(widget, 0, 0, 1, 1);
@@ -94,11 +88,10 @@ public:
     void retranslateUi(QWidget *Cell_UserMgr)
     {
         Cell_UserMgr->setWindowTitle(QCoreApplication::translate("Cell_UserMgr", "Form", nullptr));
+        pushButton->setText(QCoreApplication::translate("Cell_UserMgr", "\347\224\250\346\210\267\345\257\274\345\205\245", nullptr));
         pushButton_2->setText(QCoreApplication::translate("Cell_UserMgr", "\345\210\240\351\231\244\347\224\250\346\210\267", nullptr));
         label->setText(QCoreApplication::translate("Cell_UserMgr", "\346\220\234\347\264\242", nullptr));
-        pushButton->setText(QCoreApplication::translate("Cell_UserMgr", "\347\224\250\346\210\267\345\257\274\345\205\245", nullptr));
         label_2->setText(QCoreApplication::translate("Cell_UserMgr", "\347\256\241\347\220\206\345\221\230\347\263\273\347\273\237\347\224\250\346\210\267\347\256\241\347\220\206", nullptr));
-        pushButton_3->setText(QCoreApplication::translate("Cell_UserMgr", "\345\233\276\344\271\246\345\275\222\350\277\230", nullptr));
     } // retranslateUi
 
 };

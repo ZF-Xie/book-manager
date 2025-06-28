@@ -1,5 +1,7 @@
 debug/cell_bookmgr.o
 debug/cell_main.o
+debug/cell_record.o
+debug/cell_reply.o
 debug/cell_usermgr.o
 debug/dlg_login.o
 debug/dlg_register.o
@@ -8,6 +10,8 @@ debug/sql_login.o
 debug/qrc_res.o
 debug/moc_cell_bookmgr.o
 debug/moc_cell_main.o
+debug/moc_cell_record.o
+debug/moc_cell_reply.o
 debug/moc_cell_usermgr.o
 debug/moc_dlg_login.o
 debug/moc_dlg_register.o
