@@ -11,6 +11,7 @@ debug/dlg_register.o
 debug/dlg_user.o
 debug/main.o
 debug/sql_login.o
+debug/sqlmgr.o
 debug/qrc_res.o
 debug/moc_cell_bookhis.o
 debug/moc_cell_booklist.o

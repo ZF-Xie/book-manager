@@ -27,9 +27,9 @@ public:
     QGridLayout *gridLayout;
     QWidget *widget;
     QGridLayout *gridLayout_2;
-    QPushButton *pushButton;
-    QPushButton *pushButton_2;
-    QLineEdit *lineEdit;
+    QPushButton *btn_import;
+    QPushButton *btn_del;
+    QLineEdit *le_search;
     QLabel *label;
     QLabel *label_2;
     QTableView *tableView;
@@ -45,20 +45,20 @@ public:
         widget->setObjectName(QString::fromUtf8("widget"));
         gridLayout_2 = new QGridLayout(widget);
         gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
-        pushButton = new QPushButton(widget);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        btn_import = new QPushButton(widget);
+        btn_import->setObjectName(QString::fromUtf8("btn_import"));
 
-        gridLayout_2->addWidget(pushButton, 1, 0, 1, 1);
+        gridLayout_2->addWidget(btn_import, 1, 0, 1, 1);
 
-        pushButton_2 = new QPushButton(widget);
-        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
+        btn_del = new QPushButton(widget);
+        btn_del->setObjectName(QString::fromUtf8("btn_del"));
 
-        gridLayout_2->addWidget(pushButton_2, 1, 1, 1, 1);
+        gridLayout_2->addWidget(btn_del, 1, 1, 1, 1);
 
-        lineEdit = new QLineEdit(widget);
-        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
+        le_search = new QLineEdit(widget);
+        le_search->setObjectName(QString::fromUtf8("le_search"));
 
-        gridLayout_2->addWidget(lineEdit, 1, 2, 1, 1);
+        gridLayout_2->addWidget(le_search, 1, 2, 1, 1);
 
         label = new QLabel(widget);
         label->setObjectName(QString::fromUtf8("label"));
@@ -67,7 +67,7 @@ public:
 
         label_2 = new QLabel(widget);
         label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        label_2->setAlignment(Qt::AlignCenter);
 
         gridLayout_2->addWidget(label_2, 0, 0, 1, 3);
 
@@ -88,8 +88,8 @@ public:
     void retranslateUi(QWidget *Cell_UserMgr)
     {
         Cell_UserMgr->setWindowTitle(QCoreApplication::translate("Cell_UserMgr", "Form", nullptr));
-        pushButton->setText(QCoreApplication::translate("Cell_UserMgr", "\347\224\250\346\210\267\345\257\274\345\205\245", nullptr));
-        pushButton_2->setText(QCoreApplication::translate("Cell_UserMgr", "\345\210\240\351\231\244\347\224\250\346\210\267", nullptr));
+        btn_import->setText(QCoreApplication::translate("Cell_UserMgr", "\347\224\250\346\210\267\345\257\274\345\205\245", nullptr));
+        btn_del->setText(QCoreApplication::translate("Cell_UserMgr", "\345\210\240\351\231\244\347\224\250\346\210\267", nullptr));
         label->setText(QCoreApplication::translate("Cell_UserMgr", "\346\220\234\347\264\242", nullptr));
         label_2->setText(QCoreApplication::translate("Cell_UserMgr", "\347\256\241\347\220\206\345\221\230\347\263\273\347\273\237\347\224\250\346\210\267\347\256\241\347\220\206", nullptr));
     } // retranslateUi

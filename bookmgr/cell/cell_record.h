@@ -17,6 +17,7 @@ public:
 
 private:
     Ui::Cell_Record *ui;
+
 };
 
 #endif // CELL_RECORD_H

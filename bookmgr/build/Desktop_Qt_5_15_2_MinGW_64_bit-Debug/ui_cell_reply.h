@@ -16,7 +16,7 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QTableWidget>
+#include <QtWidgets/QTableView>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -28,11 +28,11 @@ public:
     QLabel *label;
     QWidget *widget;
     QGridLayout *gridLayout;
-    QPushButton *pushButton;
     QPushButton *pushButton_2;
     QLineEdit *lineEdit;
     QLabel *label_2;
-    QTableWidget *tableWidget;
+    QPushButton *pushButton;
+    QTableView *tableView;
 
     void setupUi(QWidget *Cell_Reply)
     {
@@ -43,7 +43,7 @@ public:
         gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
         label = new QLabel(Cell_Reply);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        label->setAlignment(Qt::AlignCenter);
 
         gridLayout_2->addWidget(label, 0, 0, 1, 1);
 
@@ -51,11 +51,6 @@ public:
         widget->setObjectName(QString::fromUtf8("widget"));
         gridLayout = new QGridLayout(widget);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
-        pushButton = new QPushButton(widget);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
-
-        gridLayout->addWidget(pushButton, 0, 0, 1, 1);
-
         pushButton_2 = new QPushButton(widget);
         pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
 
@@ -71,13 +66,18 @@ public:
 
         gridLayout->addWidget(label_2, 0, 3, 1, 1);
 
+        pushButton = new QPushButton(widget);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+
+        gridLayout->addWidget(pushButton, 0, 0, 1, 1);
+
 
         gridLayout_2->addWidget(widget, 1, 0, 1, 1);
 
-        tableWidget = new QTableWidget(Cell_Reply);
-        tableWidget->setObjectName(QString::fromUtf8("tableWidget"));
+        tableView = new QTableView(Cell_Reply);
+        tableView->setObjectName(QString::fromUtf8("tableView"));
 
-        gridLayout_2->addWidget(tableWidget, 2, 0, 1, 1);
+        gridLayout_2->addWidget(tableView, 2, 0, 1, 1);
 
 
         retranslateUi(Cell_Reply);
@@ -89,9 +89,9 @@ public:
     {
         Cell_Reply->setWindowTitle(QCoreApplication::translate("Cell_Reply", "Form", nullptr));
         label->setText(QCoreApplication::translate("Cell_Reply", "\347\256\241\347\220\206\345\221\230\347\263\273\347\273\237\347\225\231\350\250\200\345\233\236\345\244\215", nullptr));
-        pushButton->setText(QCoreApplication::translate("Cell_Reply", "\346\217\220\344\272\244\345\233\236\345\244\215", nullptr));
         pushButton_2->setText(QCoreApplication::translate("Cell_Reply", "\345\210\240\351\231\244\347\225\231\350\250\200", nullptr));
         label_2->setText(QCoreApplication::translate("Cell_Reply", "\346\220\234\347\264\242", nullptr));
+        pushButton->setText(QCoreApplication::translate("Cell_Reply", "\346\217\220\344\272\244\345\233\236\345\244\215", nullptr));
     } // retranslateUi
 
 };

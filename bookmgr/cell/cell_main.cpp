@@ -40,6 +40,8 @@ void Cell_Main::initPage()
             connect(static_cast<QPushButton*>(it),&QPushButton::clicked,this,&Cell_Main::dealMenu);
         }
     }
+    m_userPage->initPage();
+
 }
 
 void Cell_Main::dealMenu()
@@ -50,6 +52,7 @@ void Cell_Main::dealMenu()
     {
         if ("btn_user"==str)
         {
+            m_userPage->initPage();
             ui->stackedWidget->setCurrentIndex(0);
             break;
         }

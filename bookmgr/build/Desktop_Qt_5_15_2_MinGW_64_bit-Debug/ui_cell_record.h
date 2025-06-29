@@ -16,7 +16,7 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QTableWidget>
+#include <QtWidgets/QTableView>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -25,13 +25,13 @@ class Ui_Cell_Record
 {
 public:
     QGridLayout *gridLayout_2;
-    QLabel *label_2;
     QWidget *widget;
     QGridLayout *gridLayout;
     QPushButton *pushButton_2;
     QLineEdit *lineEdit;
     QLabel *label;
-    QTableWidget *tableWidget;
+    QLabel *label_2;
+    QTableView *tableView;
 
     void setupUi(QWidget *Cell_Record)
     {
@@ -40,12 +40,6 @@ public:
         Cell_Record->resize(695, 542);
         gridLayout_2 = new QGridLayout(Cell_Record);
         gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
-        label_2 = new QLabel(Cell_Record);
-        label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setAlignment(Qt::AlignmentFlag::AlignCenter);
-
-        gridLayout_2->addWidget(label_2, 0, 0, 1, 1);
-
         widget = new QWidget(Cell_Record);
         widget->setObjectName(QString::fromUtf8("widget"));
         gridLayout = new QGridLayout(widget);
@@ -68,10 +62,16 @@ public:
 
         gridLayout_2->addWidget(widget, 1, 0, 1, 1);
 
-        tableWidget = new QTableWidget(Cell_Record);
-        tableWidget->setObjectName(QString::fromUtf8("tableWidget"));
+        label_2 = new QLabel(Cell_Record);
+        label_2->setObjectName(QString::fromUtf8("label_2"));
+        label_2->setAlignment(Qt::AlignCenter);
 
-        gridLayout_2->addWidget(tableWidget, 2, 0, 1, 1);
+        gridLayout_2->addWidget(label_2, 0, 0, 1, 1);
+
+        tableView = new QTableView(Cell_Record);
+        tableView->setObjectName(QString::fromUtf8("tableView"));
+
+        gridLayout_2->addWidget(tableView, 2, 0, 1, 1);
 
 
         retranslateUi(Cell_Record);
@@ -82,9 +82,9 @@ public:
     void retranslateUi(QWidget *Cell_Record)
     {
         Cell_Record->setWindowTitle(QCoreApplication::translate("Cell_Record", "Form", nullptr));
-        label_2->setText(QCoreApplication::translate("Cell_Record", "\347\256\241\347\220\206\345\221\230\347\263\273\347\273\237\345\200\237\351\230\205\350\256\260\345\275\225", nullptr));
         pushButton_2->setText(QCoreApplication::translate("Cell_Record", "\346\270\205\347\251\272\350\256\260\345\275\225", nullptr));
         label->setText(QCoreApplication::translate("Cell_Record", "\346\220\234\347\264\242", nullptr));
+        label_2->setText(QCoreApplication::translate("Cell_Record", "\347\256\241\347\220\206\345\221\230\347\263\273\347\273\237\345\200\237\351\230\205\350\256\260\345\275\225", nullptr));
     } // retranslateUi
 
 };
