@@ -46,15 +46,30 @@ QVector<QStringList> SqlMgr::getUser(QString strCondition)
     return vec;
 }
 
-void SqlMgr::AddUser(QVector<QStringList>)
+void SqlMgr::AddUser(QVector<QStringList> v)
 {
+    m_db.transaction();
+    QSqlQuery q(m_db);
+    for(auto it:v)
+    {
+    QString strSql=QString("insert into user VALUES(NULL,'%1','%1','%1');")
+                             .arg(it[0])
+                             .arg(it[1])
+                             .arg(it[2]);
+    bool ret=q.exec(strSql);
 
+    if(!ret)
+    {
+        qDebug()<<q.lastError().text();
+    }
+    }
+    m_db.commit();
 }
 
 void SqlMgr::delUser(QString strId)
 {
     QSqlQuery q(m_db);
-    QString strSql=QString("delete from use where user_id = '%1'").arg(strId);
+    QString strSql=QString("delete from user where user_id = '%1'").arg(strId);
     bool ret=q.exec(strSql);
 
     if(!ret)

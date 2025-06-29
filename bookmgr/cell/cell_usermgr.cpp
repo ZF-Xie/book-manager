@@ -79,7 +79,7 @@ void Cell_UserMgr::on_btn_import_clicked()
                 QMessageBox::information(nullptr,"信息","导入失败");
                 return;
             }
-            l[l.size()-1].chopped(4);
+            l[l.size()-1]=l[l.size()-1].chopped(2);
             vecData.push_back(l);
         }
         SqlMgr::getInstance()->AddUser(vecData);
