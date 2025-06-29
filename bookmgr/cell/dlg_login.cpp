@@ -42,11 +42,12 @@ void Dlg_Login::on_btn_login_clicked()
     bool role = sql_login::getInstance()->Judge_role(strName);
     if(role)
     {
-        setResult(2);
+        int res = sql_login::getInstance()->Get_id(strName);
+        setResult(res);
     }
     else
     {
-        setResult(3);
+        setResult(0);
     }
     hide_event();
 }
@@ -55,14 +56,14 @@ void Dlg_Login::on_btn_exit_clicked()
     QMessageBox::StandardButton reply;
     reply = QMessageBox::question(this, "确认退出", "确定要退出应用程序吗？",QMessageBox::Yes | QMessageBox::No);
     if (reply == QMessageBox::Yes) {
-        setResult(4);
+        setResult(-1);
         hide_event();
     }
 }
 
 void Dlg_Login::on_btn_register_clicked()
 {
-    setResult(5);
+    setResult(-2);
     hide_event();
 }
 

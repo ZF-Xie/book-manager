@@ -28,6 +28,9 @@ public:
     //注册
     bool Register(QString strUser, QString strPassword);
 
+    //获取用户id
+    int Get_id(QString strUser);
+
 private:
     QSqlDatabase m_db;
 };
