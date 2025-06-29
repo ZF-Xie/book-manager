@@ -3,6 +3,7 @@
 #include"lib/sqlmgr.h"
 #include <QFileDialog>
 #include<QMessageBox>
+#include<QTextCodec>
 Cell_UserMgr::Cell_UserMgr(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::Cell_UserMgr)
@@ -63,8 +64,24 @@ void Cell_UserMgr::on_btn_del_clicked()
 
 static QString convertUTF8(QString strGBK)
 {
+    // 将QString还原为GBK编码的字节数组（假设原字符串被误解释为Latin1）
+    QByteArray gbkData = strGBK.toLatin1();
 
-    return QString();
+    // 获取GBK编解码器
+    QTextCodec *gbkCodec = QTextCodec::codecForName("GBK");
+    if (!gbkCodec) {
+        gbkCodec = QTextCodec::codecForName("GB18030"); // 尝试GB18030（兼容GBK）
+    }
+
+    if (gbkCodec) {
+        // 将GBK字节数组转换为Unicode字符串
+        QString unicodeStr = gbkCodec->toUnicode(gbkData);
+        // 返回UTF-8编码的QString（内部存储为UTF-16）
+        return unicodeStr;
+    }
+
+    // 找不到编解码器时直接返回原始字符串（避免进一步破坏）
+    return strGBK;
 }
 
 
@@ -102,7 +119,7 @@ void Cell_UserMgr::on_btn_import_clicked()
 
 void Cell_UserMgr::on_le_search_textChanged(const QString &arg1)
 {
-    //QString strCond=QString("where user_name like '%%1%'or user_id like'%%1%'").arg(arg1);
-    //initPage(strCond);
+    QString strCond=QString("where user_name like '%%1%'or user_id like'%%1%'").arg(arg1);
+    initPage(strCond);
 }
 
