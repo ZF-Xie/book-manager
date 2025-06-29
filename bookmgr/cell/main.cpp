@@ -3,34 +3,47 @@
 #include "dlg_login.h"
 #include "dlg_register.h"
 #include "lib/sql_login.h"
-
+#include "dlg_user.h"
+int login_event(Dlg_Login* dlg){
+    int ret = dlg->exec();
+    while(ret == -2)
+    {
+        dlg_register w;
+        w.exec();
+        ret = dlg->exec();
+    }
+    if(ret == -1)
+    {
+        exit(0);
+        return ret;
+    }
+    if(ret == 0)
+    {
+        return ret;
+    }
+    else
+    {
+        dlg_user w;
+        w.user_id = ret;
+        int res = w.exec();
+        if(res == -3)
+        {
+            ret = login_event(dlg);
+        }
+    }
+    return ret;
+}
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     sql_login::getInstance()->init();
     Dlg_Login dlg;
-    int ret = dlg.exec();
-    while(ret == 5)
+    Cell_Main w;
+    int ret = login_event(&dlg);
+    if(ret == 0)
     {
-        dlg_register w;
-        w.exec();
-        ret = dlg.exec();
-    }
-    if(ret == 4)
-    {
-        exit(0);
-        return 0;
-    }
-    if(ret == 3)
-    {
-        Cell_Main w;
         w.show();
         return a.exec();
     }
-    if(ret == 2)
-    {
-        //牢大自己加
-    }
     return a.exec();
 }
-

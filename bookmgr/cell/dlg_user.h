@@ -14,7 +14,8 @@ class dlg_user;
 class dlg_user : public QDialog
 {
     Q_OBJECT
-
+public:
+    int user_id;
 public:
     explicit dlg_user(QWidget *parent = nullptr);
     ~dlg_user();
@@ -22,6 +23,7 @@ public:
     void dealMenu();
 
 private slots:
+
     void on_btn_returndlg_clicked();
 
 private:

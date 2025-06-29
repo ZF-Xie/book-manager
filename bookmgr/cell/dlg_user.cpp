@@ -70,7 +70,7 @@ void dlg_user::dealMenu(){
 
 void dlg_user::on_btn_returndlg_clicked()
 {
-    setResult(4);
+    setResult(-3);
     hide();
 }
 
