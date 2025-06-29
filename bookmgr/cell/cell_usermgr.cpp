@@ -61,12 +61,6 @@ void Cell_UserMgr::on_btn_del_clicked()
 
 }
 
-static QString convertUTF8(QString strGBK)
-{
-
-    return QString();
-}
-
 
 void Cell_UserMgr::on_btn_import_clicked()
 {
@@ -80,11 +74,6 @@ void Cell_UserMgr::on_btn_import_clicked()
         {
             QString str=f.readLine();
             auto l = str.split(",");
-            //todo gbk转utf8
-            for(auto &itC:l)
-            {
-                itC=convertUTF8(itC);
-            }
             if(l.size()!=3)
             {
                 QMessageBox::information(nullptr,"信息","导入失败");
@@ -94,15 +83,13 @@ void Cell_UserMgr::on_btn_import_clicked()
             vecData.push_back(l);
         }
         SqlMgr::getInstance()->AddUser(vecData);
-        ui->le_search->clear();
-        initPage();
     }
 }
 
 
 void Cell_UserMgr::on_le_search_textChanged(const QString &arg1)
 {
-    //QString strCond=QString("where user_name like '%%1%'or user_id like'%%1%'").arg(arg1);
-    //initPage(strCond);
+    QString strCond=QString("where user_name like '%%1%' or user_id like '%%1%'").arg(arg1);
+    initPage(strCond);
 }
 
