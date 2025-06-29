@@ -4,7 +4,6 @@
 #include "dlg_register.h"
 #include "lib/sql_login.h"
 #include "dlg_user.h"
-#include "lib/sqlmgr.h"
 int login_event(Dlg_Login* dlg){
     int ret = dlg->exec();
     while(ret == -2)
@@ -18,11 +17,11 @@ int login_event(Dlg_Login* dlg){
         exit(0);
         return ret;
     }
-    if(ret == 0)
+    if(ret == -4)
     {
         return ret;
     }
-    else
+    if(ret > 0)
     {
         dlg_user w;
         w.user_id = ret;
@@ -40,9 +39,8 @@ int main(int argc, char *argv[])
     sql_login::getInstance()->init();
     Dlg_Login dlg;
     Cell_Main w;
-    SqlMgr::getInstance()->init();
     int ret = login_event(&dlg);
-    if(ret == 0)
+    if(ret == -4)
     {
         w.show();
         return a.exec();
