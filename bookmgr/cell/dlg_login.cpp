@@ -47,7 +47,7 @@ void Dlg_Login::on_btn_login_clicked()
     }
     else
     {
-        setResult(0);
+        setResult(-4);
     }
     hide_event();
 }

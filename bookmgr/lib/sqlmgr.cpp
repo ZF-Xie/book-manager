@@ -23,7 +23,7 @@ void SqlMgr::init()
 QVector<QStringList> SqlMgr::getUser(QString strCondition)
 {
     QSqlQuery q(m_db);
-    QString strSql=QString("select*from user '%1'").arg(strCondition);
+    QString strSql=QString("select * from user %1").arg(strCondition);
     bool ret=q.exec(strSql);
     QVector<QStringList>vec;
     if(!ret)
@@ -76,7 +76,6 @@ void SqlMgr::delUser(QString strId)
     {
         qDebug()<<q.lastError().text();
     }
-
 }
 
 QVector<QStringList> SqlMgr::getBooks(QString strCondition)
