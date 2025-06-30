@@ -25,6 +25,7 @@ cell_bookhis::cell_bookhis(QWidget *parent)
     ui->tableView->setModel(&m_model);
     ui->tableView->setEditTriggers(QAbstractItemView::NoEditTriggers);
     ui->tableView->setSelectionBehavior(QAbstractItemView::SelectRows);
+    initPage();
 }
 
 
