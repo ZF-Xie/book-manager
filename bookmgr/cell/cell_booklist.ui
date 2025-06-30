@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>495</width>
-    <height>380</height>
+    <width>652</width>
+    <height>510</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,7 +20,7 @@
    <item row="1" column="2">
     <widget class="QPushButton" name="pushButton_2">
      <property name="text">
-      <string>借阅图书</string>
+      <string>借阅</string>
      </property>
     </widget>
    </item>

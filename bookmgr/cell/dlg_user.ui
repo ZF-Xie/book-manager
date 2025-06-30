@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>622</width>
-    <height>561</height>
+    <width>1234</width>
+    <height>630</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -24,8 +24,8 @@ QStackedWidget#centralwidget{background-color:color;}</string>
     <rect>
      <x>120</x>
      <y>0</y>
-     <width>501</width>
-     <height>561</height>
+     <width>1181</width>
+     <height>631</height>
     </rect>
    </property>
    <property name="maximumSize">
@@ -41,7 +41,7 @@ QStackedWidget#centralwidget{background-color:color;}</string>
      <x>0</x>
      <y>0</y>
      <width>121</width>
-     <height>561</height>
+     <height>631</height>
     </rect>
    </property>
    <property name="minimumSize">

@@ -25,33 +25,6 @@ void Cell_booklist::initpage(QString strCondition)
         }
         m_model.appendRow(items);
     }
-    /*void Cell_Bookmgr::initPage(QString strCondition)
-{
-//获取所有图书
-    auto l=SqlMgr::getInstance()->getBooks(strCondition);
-    m_model.clear();
-    m_model.setHorizontalHeaderLabels(QStringList{"书籍ID","书名","作者","书籍大类","具体类型","价格","书籍总数","可借阅数目"});
-    for(int i =0;i<l.size();i++)
-    {
-        QList<QStandardItem*> items;
-
-        for(int j=0;j<l[i].size();j++)
-        {
-            if(l[i].size()==4)
-            {
-                if(j<2||j==3)
-                {
-                    items.append(new QStandardItem(l[i][j]));
-                }
-            }
-        }
-
-        m_model.appendRow(items);
-    }
-}
-*/
-
-
 
 }
 

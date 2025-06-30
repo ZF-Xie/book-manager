@@ -28,10 +28,10 @@ public:
     QWidget *widget;
     QGridLayout *gridLayout;
     QLabel *label;
-    QLineEdit *lineEdit;
-    QPushButton *pushButton_2;
-    QPushButton *pushButton_3;
-    QPushButton *pushButton;
+    QLineEdit *le_search;
+    QPushButton *btu_update;
+    QPushButton *btu_del;
+    QPushButton *btn_add;
     QTableView *tableView;
     QLabel *label_2;
 
@@ -52,25 +52,25 @@ public:
 
         gridLayout->addWidget(label, 0, 4, 1, 1);
 
-        lineEdit = new QLineEdit(widget);
-        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
+        le_search = new QLineEdit(widget);
+        le_search->setObjectName(QString::fromUtf8("le_search"));
 
-        gridLayout->addWidget(lineEdit, 0, 3, 1, 1);
+        gridLayout->addWidget(le_search, 0, 3, 1, 1);
 
-        pushButton_2 = new QPushButton(widget);
-        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
+        btu_update = new QPushButton(widget);
+        btu_update->setObjectName(QString::fromUtf8("btu_update"));
 
-        gridLayout->addWidget(pushButton_2, 0, 1, 1, 1);
+        gridLayout->addWidget(btu_update, 0, 1, 1, 1);
 
-        pushButton_3 = new QPushButton(widget);
-        pushButton_3->setObjectName(QString::fromUtf8("pushButton_3"));
+        btu_del = new QPushButton(widget);
+        btu_del->setObjectName(QString::fromUtf8("btu_del"));
 
-        gridLayout->addWidget(pushButton_3, 0, 2, 1, 1);
+        gridLayout->addWidget(btu_del, 0, 2, 1, 1);
 
-        pushButton = new QPushButton(widget);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        btn_add = new QPushButton(widget);
+        btn_add->setObjectName(QString::fromUtf8("btn_add"));
 
-        gridLayout->addWidget(pushButton, 0, 0, 1, 1);
+        gridLayout->addWidget(btn_add, 0, 0, 1, 1);
 
 
         gridLayout_2->addWidget(widget, 1, 0, 1, 1);
@@ -96,9 +96,9 @@ public:
     {
         Cell_Bookmgr->setWindowTitle(QCoreApplication::translate("Cell_Bookmgr", "Form", nullptr));
         label->setText(QCoreApplication::translate("Cell_Bookmgr", "\346\220\234\347\264\242", nullptr));
-        pushButton_2->setText(QCoreApplication::translate("Cell_Bookmgr", "\344\277\256\346\224\271", nullptr));
-        pushButton_3->setText(QCoreApplication::translate("Cell_Bookmgr", "\345\210\240\351\231\244", nullptr));
-        pushButton->setText(QCoreApplication::translate("Cell_Bookmgr", "\345\242\236\345\212\240", nullptr));
+        btu_update->setText(QCoreApplication::translate("Cell_Bookmgr", "\344\277\256\346\224\271", nullptr));
+        btu_del->setText(QCoreApplication::translate("Cell_Bookmgr", "\345\210\240\351\231\244", nullptr));
+        btn_add->setText(QCoreApplication::translate("Cell_Bookmgr", "\345\242\236\345\212\240", nullptr));
         label_2->setText(QCoreApplication::translate("Cell_Bookmgr", "\347\256\241\347\220\206\345\221\230\347\263\273\347\273\237\345\233\276\344\271\246\347\256\241\347\220\206", nullptr));
     } // retranslateUi
 

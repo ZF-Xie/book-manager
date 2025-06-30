@@ -25,6 +25,7 @@ QString sql_login::Login(QString strUser, QString strPassword)
         ret = 1;
     else
         ret = 0;
+    qDebug()<<ret;
     if(!ret)
     {
         strUser = "";
@@ -34,6 +35,7 @@ QString sql_login::Login(QString strUser, QString strPassword)
         ret = 1;
     else
         ret = 0;
+    qDebug()<<ret;
     if(ret && strUser == "")
     {
         strUser = " " + strUser;

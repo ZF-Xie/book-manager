@@ -16,22 +16,13 @@ Sqluserdata::~Sqluserdata()
 
 void Sqluserdata::init()
 {
-    m_db=QSqlDatabase::addDatabase("QSQLITE");
-    QString strpath =QCoreApplication::applicationDirPath()+"db/book.db";
-    m_db.setDatabaseName(QCoreApplication::applicationDirPath()+"db/book.db");
 
-    qDebug()<<m_db.open();
-
-    m_db = QSqlDatabase::addDatabase("QSQLITE");
-    QString strPath = QCoreApplication::applicationDirPath()+"db/book.db";
-    m_db.setDatabaseName(strPath);
-    m_db.open();
 }
 
 QVector<QStringList> Sqluserdata::getBooks(QString strCondition)
 {
     QSqlQuery q(m_db);
-    QString strSql =QString("select * from title %1 ").arg(strCondition);
+    QString strSql =QString("select * from book %1").arg(strCondition);
 
     QVector<QStringList> vec;
     bool ret =q.exec(strSql);

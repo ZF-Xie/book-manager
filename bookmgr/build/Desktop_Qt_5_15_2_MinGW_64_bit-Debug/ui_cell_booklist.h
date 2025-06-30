@@ -37,7 +37,7 @@ public:
     {
         if (Cell_booklist->objectName().isEmpty())
             Cell_booklist->setObjectName(QString::fromUtf8("Cell_booklist"));
-        Cell_booklist->resize(495, 380);
+        Cell_booklist->resize(652, 510);
         gridLayout = new QGridLayout(Cell_booklist);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         le_search = new QLineEdit(Cell_booklist);
@@ -79,7 +79,7 @@ public:
     void retranslateUi(QWidget *Cell_booklist)
     {
         Cell_booklist->setWindowTitle(QCoreApplication::translate("Cell_booklist", "Form", nullptr));
-        pushButton_2->setText(QCoreApplication::translate("Cell_booklist", "\345\200\237\351\230\205\345\233\276\344\271\246", nullptr));
+        pushButton_2->setText(QCoreApplication::translate("Cell_booklist", "\345\200\237\351\230\205", nullptr));
         label_2->setText(QCoreApplication::translate("Cell_booklist", "Qt\345\233\276\344\271\246\347\256\241\347\220\206\347\263\273\347\273\237/\345\233\276\344\271\246\346\237\245\347\234\213", nullptr));
         label->setText(QCoreApplication::translate("Cell_booklist", "\345\233\276\344\271\246\346\243\200\347\264\242", nullptr));
     } // retranslateUi
