@@ -26,7 +26,7 @@ public:
     bool Judge_role(QString strUser);
 
     //注册
-    bool Register(QString strUser, QString strPassword);
+    bool Register(QString strUser, QString strPassword, QString strTname, QString strPhone);
 
     //获取用户id
     int Get_id(QString strUser);

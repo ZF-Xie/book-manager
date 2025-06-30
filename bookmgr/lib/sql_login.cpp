@@ -65,14 +65,13 @@ int sql_login::Get_id(QString strUser)
     QSqlQuery q(m_db);
     QString strSql = QString("select * from user where user_name='%1' and role='用户'").arg(strUser);
     q.exec(strSql);
-    int ret;
     q.next();
     int res = q.value(0).toInt();
     qDebug()<< res;
     return res;
 }
 
-bool sql_login::Register(QString strUser, QString strPassword)
+bool sql_login::Register(QString strUser, QString strPassword, QString strTname, QString strPhone)
 {
     QSqlQuery q(m_db);
     QString strSql = QString("select * from user where user_name='%1'").arg(strUser);
@@ -85,7 +84,7 @@ bool sql_login::Register(QString strUser, QString strPassword)
     qDebug()<<ret;
     if(!ret)
     {
-        strSql = QString("insert into user VALUES(NULL,'%1','%2','用户')").arg(strUser, strPassword);
+        strSql = QString("insert into user VALUES(NULL,'%1','%2','用户','%3', '%4', '良好')").arg(strUser, strPassword, strTname, strPhone);
         q.exec(strSql);
     }
     return !ret;
