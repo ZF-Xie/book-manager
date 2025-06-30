@@ -12,3 +12,15 @@ cell_bookhis::~cell_bookhis()
 {
     delete ui;
 }
+
+void cell_bookhis::on_btu_clear_clicked()
+{
+
+}
+
+
+void cell_bookhis::on_le_search_textChanged(const QString &arg1)
+{
+
+}
+

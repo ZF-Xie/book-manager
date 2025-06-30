@@ -15,6 +15,11 @@ public:
     explicit cell_bookhis(QWidget *parent = nullptr);
     ~cell_bookhis();
 
+private slots:
+    void on_btu_clear_clicked();
+
+    void on_le_search_textChanged(const QString &arg1);
+
 private:
     Ui::cell_bookhis *ui;
 };
