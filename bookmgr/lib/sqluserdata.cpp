@@ -16,7 +16,7 @@ Sqluserdata::~Sqluserdata()
 
 void Sqluserdata::init()
 {
-    /*m_db=QSqlDatabase::addDatabase("QSQLITE");
+    m_db=QSqlDatabase::addDatabase("QSQLITE");
     QString strpath =QCoreApplication::applicationDirPath()+"db/book.db";
     m_db.setDatabaseName(QCoreApplication::applicationDirPath()+"db/book.db");
 
@@ -25,7 +25,7 @@ void Sqluserdata::init()
     m_db = QSqlDatabase::addDatabase("QSQLITE");
     QString strPath = QCoreApplication::applicationDirPath()+"db/book.db";
     m_db.setDatabaseName(strPath);
-    m_db.open();*/
+    m_db.open();
 }
 
 QVector<QStringList> Sqluserdata::getBooks(QString strCondition)
