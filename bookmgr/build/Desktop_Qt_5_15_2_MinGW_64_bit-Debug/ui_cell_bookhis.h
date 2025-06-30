@@ -29,8 +29,8 @@ public:
     QGridLayout *gridLayout;
     QLabel *label_2;
     QLabel *label;
-    QLineEdit *le_search;
-    QPushButton *btu_clear;
+    QLineEdit *lineEdit;
+    QPushButton *pushButton;
     QSpacerItem *horizontalSpacer;
     QTableView *tableView;
 
@@ -54,15 +54,15 @@ public:
 
         gridLayout->addWidget(label, 1, 0, 1, 1);
 
-        le_search = new QLineEdit(cell_bookhis);
-        le_search->setObjectName(QString::fromUtf8("le_search"));
+        lineEdit = new QLineEdit(cell_bookhis);
+        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
 
-        gridLayout->addWidget(le_search, 1, 1, 1, 1);
+        gridLayout->addWidget(lineEdit, 1, 1, 1, 1);
 
-        btu_clear = new QPushButton(cell_bookhis);
-        btu_clear->setObjectName(QString::fromUtf8("btu_clear"));
+        pushButton = new QPushButton(cell_bookhis);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
 
-        gridLayout->addWidget(btu_clear, 1, 2, 1, 1);
+        gridLayout->addWidget(pushButton, 1, 2, 1, 1);
 
         horizontalSpacer = new QSpacerItem(227, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
@@ -87,7 +87,7 @@ public:
         cell_bookhis->setWindowTitle(QCoreApplication::translate("cell_bookhis", "Form", nullptr));
         label_2->setText(QCoreApplication::translate("cell_bookhis", "Qt\345\233\276\344\271\246\347\256\241\347\220\206\347\263\273\347\273\237/\345\200\237\351\230\205\345\216\206\345\217\262", nullptr));
         label->setText(QCoreApplication::translate("cell_bookhis", "\345\233\276\344\271\246\346\243\200\347\264\242", nullptr));
-        btu_clear->setText(QCoreApplication::translate("cell_bookhis", "\345\210\240\351\231\244\345\216\206\345\217\262", nullptr));
+        pushButton->setText(QCoreApplication::translate("cell_bookhis", "\345\210\240\351\231\244\345\216\206\345\217\262", nullptr));
     } // retranslateUi
 
 };
