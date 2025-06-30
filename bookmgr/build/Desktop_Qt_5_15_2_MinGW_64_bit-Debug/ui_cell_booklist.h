@@ -26,21 +26,34 @@ class Ui_Cell_booklist
 {
 public:
     QGridLayout *gridLayout;
+    QLineEdit *le_search;
+    QPushButton *pushButton_2;
+    QSpacerItem *spacer;
     QLabel *label_2;
     QLabel *label;
     QTableView *tableView;
-    QPushButton *pushButton;
-    QLineEdit *lineEdit;
-    QPushButton *pushButton_2;
-    QSpacerItem *spacer;
 
     void setupUi(QWidget *Cell_booklist)
     {
         if (Cell_booklist->objectName().isEmpty())
             Cell_booklist->setObjectName(QString::fromUtf8("Cell_booklist"));
-        Cell_booklist->resize(495, 380);
+        Cell_booklist->resize(652, 510);
         gridLayout = new QGridLayout(Cell_booklist);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
+        le_search = new QLineEdit(Cell_booklist);
+        le_search->setObjectName(QString::fromUtf8("le_search"));
+
+        gridLayout->addWidget(le_search, 1, 1, 1, 1);
+
+        pushButton_2 = new QPushButton(Cell_booklist);
+        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
+
+        gridLayout->addWidget(pushButton_2, 1, 2, 1, 1);
+
+        spacer = new QSpacerItem(208, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout->addItem(spacer, 1, 3, 1, 1);
+
         label_2 = new QLabel(Cell_booklist);
         label_2->setObjectName(QString::fromUtf8("label_2"));
 
@@ -55,26 +68,7 @@ public:
         tableView = new QTableView(Cell_booklist);
         tableView->setObjectName(QString::fromUtf8("tableView"));
 
-        gridLayout->addWidget(tableView, 5, 0, 1, 5);
-
-        pushButton = new QPushButton(Cell_booklist);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
-
-        gridLayout->addWidget(pushButton, 1, 3, 1, 1);
-
-        lineEdit = new QLineEdit(Cell_booklist);
-        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
-
-        gridLayout->addWidget(lineEdit, 1, 1, 1, 1);
-
-        pushButton_2 = new QPushButton(Cell_booklist);
-        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
-
-        gridLayout->addWidget(pushButton_2, 1, 2, 1, 1);
-
-        spacer = new QSpacerItem(208, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        gridLayout->addItem(spacer, 1, 4, 1, 1);
+        gridLayout->addWidget(tableView, 5, 0, 1, 4);
 
 
         retranslateUi(Cell_booklist);
@@ -85,10 +79,9 @@ public:
     void retranslateUi(QWidget *Cell_booklist)
     {
         Cell_booklist->setWindowTitle(QCoreApplication::translate("Cell_booklist", "Form", nullptr));
+        pushButton_2->setText(QCoreApplication::translate("Cell_booklist", "\345\200\237\351\230\205", nullptr));
         label_2->setText(QCoreApplication::translate("Cell_booklist", "Qt\345\233\276\344\271\246\347\256\241\347\220\206\347\263\273\347\273\237/\345\233\276\344\271\246\346\237\245\347\234\213", nullptr));
         label->setText(QCoreApplication::translate("Cell_booklist", "\345\233\276\344\271\246\346\243\200\347\264\242", nullptr));
-        pushButton->setText(QString());
-        pushButton_2->setText(QString());
     } // retranslateUi
 
 };
