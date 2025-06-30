@@ -31,7 +31,7 @@ void Sqluserdata::init()
 QVector<QStringList> Sqluserdata::getBooks(QString strCondition)
 {
     QSqlQuery q(m_db);
-    QString strSql =QString("select * from book 1%").arg(strCondition);
+    QString strSql =QString("select * from title %1 ").arg(strCondition);
 
     QVector<QStringList> vec;
     bool ret =q.exec(strSql);

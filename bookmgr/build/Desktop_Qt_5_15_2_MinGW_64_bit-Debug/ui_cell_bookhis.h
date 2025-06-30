@@ -87,7 +87,7 @@ public:
         cell_bookhis->setWindowTitle(QCoreApplication::translate("cell_bookhis", "Form", nullptr));
         label_2->setText(QCoreApplication::translate("cell_bookhis", "Qt\345\233\276\344\271\246\347\256\241\347\220\206\347\263\273\347\273\237/\345\200\237\351\230\205\345\216\206\345\217\262", nullptr));
         label->setText(QCoreApplication::translate("cell_bookhis", "\345\233\276\344\271\246\346\243\200\347\264\242", nullptr));
-        btu_clear->setText(QCoreApplication::translate("cell_bookhis", "\345\210\240\351\231\244\345\216\206\345\217\262", nullptr));
+        btu_clear->setText(QCoreApplication::translate("cell_bookhis", "\345\275\222\350\277\230\345\233\276\344\271\246", nullptr));
     } // retranslateUi
 
 };

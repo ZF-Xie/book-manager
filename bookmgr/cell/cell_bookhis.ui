@@ -39,7 +39,7 @@
      <item row="1" column="2">
       <widget class="QPushButton" name="btu_clear">
        <property name="text">
-        <string>删除历史</string>
+        <string>归还图书</string>
        </property>
       </widget>
      </item>
