@@ -1,7 +1,7 @@
 #ifndef CELL_BOOKMGR_H
 #define CELL_BOOKMGR_H
 
-#include<QStandardItem>
+#include<QStandardItemModel>
 #include <QWidget>
 
 namespace Ui {

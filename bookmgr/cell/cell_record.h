@@ -2,7 +2,7 @@
 #define CELL_RECORD_H
 
 #include <QWidget>
-
+#include <QStandardItemModel>
 namespace Ui {
 class Cell_Record;
 }
@@ -14,10 +14,10 @@ class Cell_Record : public QWidget
 public:
     explicit Cell_Record(QWidget *parent = nullptr);
     ~Cell_Record();
-
+    void initPage(QString strCondition);
 private:
     Ui::Cell_Record *ui;
-
+    QStandardItemModel m_model;
 };
 
 #endif // CELL_RECORD_H

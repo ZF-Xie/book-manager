@@ -28,13 +28,9 @@ void Cell_Bookmgr::initPage(QString strCondition)
 
         for(int j=0;j<l[i].size();j++)
         {
-            if(l[i].size()==4)
-            {
-                if(j<2||j==3)
-                {
-                    items.append(new QStandardItem(l[i][j]));
-                }
-            }
+
+            items.append(new QStandardItem(l[i][j]));
+
         }
 
         m_model.appendRow(items);
