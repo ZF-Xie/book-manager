@@ -23,7 +23,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_cell_bookhis_t {
     QByteArrayData data[5];
-    char stringdata0[65];
+    char stringdata0[66];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -33,13 +33,13 @@ struct qt_meta_stringdata_cell_bookhis_t {
 static const qt_meta_stringdata_cell_bookhis_t qt_meta_stringdata_cell_bookhis = {
     {
 QT_MOC_LITERAL(0, 0, 12), // "cell_bookhis"
-QT_MOC_LITERAL(1, 13, 20), // "on_btu_clear_clicked"
-QT_MOC_LITERAL(2, 34, 0), // ""
-QT_MOC_LITERAL(3, 35, 24), // "on_le_search_textChanged"
-QT_MOC_LITERAL(4, 60, 4) // "arg1"
+QT_MOC_LITERAL(1, 13, 21), // "on_btn_return_clicked"
+QT_MOC_LITERAL(2, 35, 0), // ""
+QT_MOC_LITERAL(3, 36, 24), // "on_le_search_textChanged"
+QT_MOC_LITERAL(4, 61, 4) // "arg1"
 
     },
-    "cell_bookhis\0on_btu_clear_clicked\0\0"
+    "cell_bookhis\0on_btn_return_clicked\0\0"
     "on_le_search_textChanged\0arg1"
 };
 #undef QT_MOC_LITERAL
@@ -74,7 +74,7 @@ void cell_bookhis::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         auto *_t = static_cast<cell_bookhis *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->on_btu_clear_clicked(); break;
+        case 0: _t->on_btn_return_clicked(); break;
         case 1: _t->on_le_search_textChanged((*reinterpret_cast< const QString(*)>(_a[1]))); break;
         default: ;
         }
