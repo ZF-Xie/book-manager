@@ -3,6 +3,7 @@
 
 #include<QtDebug>
 #include<QSqlDatabase>
+#include<QSqlQuery>
 class SqlMgr
 {
 public:
@@ -39,6 +40,7 @@ public:
     void delbook(QString strId);
     //获取借阅记录
     QVector<QStringList>getRecord(QString strCondition="");
+
     //清空借阅记录
     QString clearRecord();
 private:

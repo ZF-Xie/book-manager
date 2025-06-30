@@ -9,6 +9,7 @@ Cell_Record::Cell_Record(QWidget *parent)
     ui->tableView->setModel(&m_model);
     ui->tableView->setEditTriggers(QAbstractItemView::NoEditTriggers);
     ui->tableView->setSelectionBehavior(QAbstractItemView::SelectRows);
+    initPage();
 }
 
 Cell_Record::~Cell_Record()
@@ -20,7 +21,7 @@ void Cell_Record::initPage(QString strCondition)
 {
     auto l=SqlMgr::getInstance()->getRecord(strCondition);
     m_model.clear();
-    m_model.setHorizontalHeaderLabels(QStringList{"书籍ID","书名","作者","书籍大类","具体类型","价格","书籍总数","可借阅数目"});
+    m_model.setHorizontalHeaderLabels(QStringList{"借书记录ID","借书者ID","所借书目ID","借书日期","截止日期","归还日期","书籍当前状态"});
     for(int i =0;i<l.size();i++)
     {
         QList<QStandardItem*> items;

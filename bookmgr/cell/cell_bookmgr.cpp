@@ -25,7 +25,7 @@ void Cell_Bookmgr::initPage(QString strCondition)
         //获取所有图书
         auto l=SqlMgr::getInstance()->getBooks(strCondition);
         m_model.clear();
-        m_model.setHorizontalHeaderLabels(QStringList{"图书id","图书名称","作者","类型1","类型2","价格","数量","剩余数量"});
+        m_model.setHorizontalHeaderLabels(QStringList{"书籍ID","书名","作者","书籍大类","具体类型","价格","书籍总数","可借阅数目"});
         for (int i=0;i<l.size();i++){
             QList<QStandardItem*>items;
             for(int j=0;j<l[i].size();j++){
@@ -55,7 +55,7 @@ void Cell_Bookmgr::on_btu_del_clicked()
     else
     {
         auto id = m_model.item(r,0)->text();
-        SqlMgr::getInstance()->delUser(id);
+        SqlMgr::getInstance()->delbook(id);
         initPage();
     }
 }

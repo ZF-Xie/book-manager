@@ -1833,6 +1833,8 @@ debug/cell_bookmgr.o: ../../cell/cell_bookmgr.cpp ../../cell/cell_bookmgr.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtSql/qsqldatabase.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtSql/qtsqlglobal.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtSql/qtsql-config.h \
+		D:/Qt/5.15.2/mingw81_64/include/QtSql/QSqlQuery \
+		D:/Qt/5.15.2/mingw81_64/include/QtSql/qsqlquery.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/QFileDialog \
 		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/qfiledialog.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtCore/qdir.h \
@@ -2198,7 +2200,9 @@ debug/cell_record.o: ../../cell/cell_record.cpp ../../cell/cell_record.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtSql/QSqlDatabase \
 		D:/Qt/5.15.2/mingw81_64/include/QtSql/qsqldatabase.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtSql/qtsqlglobal.h \
-		D:/Qt/5.15.2/mingw81_64/include/QtSql/qtsql-config.h
+		D:/Qt/5.15.2/mingw81_64/include/QtSql/qtsql-config.h \
+		D:/Qt/5.15.2/mingw81_64/include/QtSql/QSqlQuery \
+		D:/Qt/5.15.2/mingw81_64/include/QtSql/qsqlquery.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\cell_record.o ..\..\cell\cell_record.cpp
 
 debug/cell_reply.o: ../../cell/cell_reply.cpp ../../cell/cell_reply.h \
@@ -2423,6 +2427,8 @@ debug/cell_usermgr.o: ../../cell/cell_usermgr.cpp ../../cell/cell_usermgr.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtSql/qsqldatabase.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtSql/qtsqlglobal.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtSql/qtsql-config.h \
+		D:/Qt/5.15.2/mingw81_64/include/QtSql/QSqlQuery \
+		D:/Qt/5.15.2/mingw81_64/include/QtSql/qsqlquery.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/QFileDialog \
 		D:/Qt/5.15.2/mingw81_64/include/QtWidgets/qfiledialog.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtCore/qdir.h \
@@ -3073,11 +3079,11 @@ debug/sqlmgr.o: ../../lib/sqlmgr.cpp ../../lib/sqlmgr.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtSql/qsqldatabase.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtSql/qtsqlglobal.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtSql/qtsql-config.h \
+		D:/Qt/5.15.2/mingw81_64/include/QtSql/QSqlQuery \
+		D:/Qt/5.15.2/mingw81_64/include/QtSql/qsqlquery.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtCore/QCoreApplication \
 		D:/Qt/5.15.2/mingw81_64/include/QtCore/qcoreapplication.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtCore/qeventloop.h \
-		D:/Qt/5.15.2/mingw81_64/include/QtSql/QSqlQuery \
-		D:/Qt/5.15.2/mingw81_64/include/QtSql/qsqlquery.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtSql/QSqlError \
 		D:/Qt/5.15.2/mingw81_64/include/QtSql/qsqlerror.h \
 		D:/Qt/5.15.2/mingw81_64/include/QtCore/QStringList \
