@@ -25,9 +25,9 @@ void dlg_user::initpage()
     m_hisPage=new cell_bookhis(this);
     m_notePage =new cell_booknote(this);
     m_listPage =new Cell_booklist(this);
+    ui->stackedWidget->addWidget(m_listPage);
     ui->stackedWidget->addWidget(m_hisPage);
     ui->stackedWidget->addWidget(m_notePage);
-    ui->stackedWidget->addWidget(m_listPage);
     ui->stackedWidget->setCurrentIndex(0);
 
     auto l=ui->tool->children();
@@ -45,16 +45,16 @@ void dlg_user::dealMenu(){
     auto str=sender()->objectName();
     do{
         if("btn_bookhis"==str){
-            ui->stackedWidget->setCurrentIndex(0);
+            ui->stackedWidget->setCurrentIndex(1);
             break;
 
         }
         if("btn_booknote"==str){
-            ui->stackedWidget->setCurrentIndex(1);
+            ui->stackedWidget->setCurrentIndex(2);
             break;
         }
         if("btn_booklist"==str){
-            ui->stackedWidget->setCurrentIndex(2);
+            ui->stackedWidget->setCurrentIndex(0);
             break;
 
         }

@@ -25,7 +25,6 @@ QT_BEGIN_NAMESPACE
 class Ui_cell_bookhis
 {
 public:
-    QGridLayout *gridLayout_2;
     QGridLayout *gridLayout;
     QLabel *label_2;
     QLabel *label;
@@ -39,14 +38,12 @@ public:
         if (cell_bookhis->objectName().isEmpty())
             cell_bookhis->setObjectName(QString::fromUtf8("cell_bookhis"));
         cell_bookhis->resize(618, 525);
-        gridLayout_2 = new QGridLayout(cell_bookhis);
-        gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
-        gridLayout = new QGridLayout();
+        gridLayout = new QGridLayout(cell_bookhis);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         label_2 = new QLabel(cell_bookhis);
         label_2->setObjectName(QString::fromUtf8("label_2"));
 
-        gridLayout->addWidget(label_2, 0, 0, 1, 4);
+        gridLayout->addWidget(label_2, 0, 0, 1, 2);
 
         label = new QLabel(cell_bookhis);
         label->setObjectName(QString::fromUtf8("label"));
@@ -64,7 +61,7 @@ public:
 
         gridLayout->addWidget(btu_clear, 1, 2, 1, 1);
 
-        horizontalSpacer = new QSpacerItem(227, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+        horizontalSpacer = new QSpacerItem(248, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
         gridLayout->addItem(horizontalSpacer, 1, 3, 1, 1);
 
@@ -72,9 +69,6 @@ public:
         tableView->setObjectName(QString::fromUtf8("tableView"));
 
         gridLayout->addWidget(tableView, 2, 0, 1, 4);
-
-
-        gridLayout_2->addLayout(gridLayout, 0, 0, 1, 1);
 
 
         retranslateUi(cell_bookhis);
@@ -87,7 +81,7 @@ public:
         cell_bookhis->setWindowTitle(QCoreApplication::translate("cell_bookhis", "Form", nullptr));
         label_2->setText(QCoreApplication::translate("cell_bookhis", "Qt\345\233\276\344\271\246\347\256\241\347\220\206\347\263\273\347\273\237/\345\200\237\351\230\205\345\216\206\345\217\262", nullptr));
         label->setText(QCoreApplication::translate("cell_bookhis", "\345\233\276\344\271\246\346\243\200\347\264\242", nullptr));
-        btu_clear->setText(QCoreApplication::translate("cell_bookhis", "\345\210\240\351\231\244\345\216\206\345\217\262", nullptr));
+        btu_clear->setText(QCoreApplication::translate("cell_bookhis", "\347\241\256\350\256\244\345\275\222\350\277\230", nullptr));
     } // retranslateUi
 
 };

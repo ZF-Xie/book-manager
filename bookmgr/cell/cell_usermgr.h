@@ -15,6 +15,7 @@ public:
     explicit Cell_UserMgr(QWidget *parent = nullptr);
     ~Cell_UserMgr();
     void initPage(QString strCondition="");
+
 private slots:
     void on_btn_del_clicked();
 

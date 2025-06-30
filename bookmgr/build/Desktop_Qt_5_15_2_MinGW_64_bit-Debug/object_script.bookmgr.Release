@@ -12,6 +12,7 @@ release/dlg_user.o
 release/main.o
 release/sql_login.o
 release/sqlmgr.o
+release/sqluserdata.o
 release/qrc_res.o
 release/moc_cell_bookhis.o
 release/moc_cell_booklist.o

@@ -15,7 +15,8 @@ class Cell_Bookmgr : public QWidget
 public:
     explicit Cell_Bookmgr(QWidget *parent = nullptr);
     ~Cell_Bookmgr();
-    void initPage(QString strCondition);
+    void initPage(QString strCondition="");
+
 private slots:
     void on_btn_add_clicked();
 

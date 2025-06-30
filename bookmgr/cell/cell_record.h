@@ -14,7 +14,12 @@ class Cell_Record : public QWidget
 public:
     explicit Cell_Record(QWidget *parent = nullptr);
     ~Cell_Record();
-    void initPage(QString strCondition);
+    void initPage(QString strCondition="");
+private slots:
+    void on_pushButton_2_clicked();
+
+    void on_lineEdit_textChanged(const QString &arg1);
+
 private:
     Ui::Cell_Record *ui;
     QStandardItemModel m_model;

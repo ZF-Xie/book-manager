@@ -11,6 +11,7 @@ Cell_UserMgr::Cell_UserMgr(QWidget *parent)
     ui->tableView->setModel(&m_model);
     ui->tableView->setEditTriggers(QAbstractItemView::NoEditTriggers);
     ui->tableView->setSelectionBehavior(QAbstractItemView::SelectRows);
+    initPage();
 
 }
 
@@ -21,28 +22,32 @@ Cell_UserMgr::~Cell_UserMgr()
 
 void Cell_UserMgr::initPage(QString strCondition)
 {
-    //查询数据库并显示
-    auto l=SqlMgr::getInstance()->getUser(strCondition);
-    m_model.clear();
-    m_model.setHorizontalHeaderLabels(QStringList{"用户ID","用户名","权限"});
-    for(int i =0;i<l.size();i++)
     {
-        QList<QStandardItem*> items;
-
-        for(int j=0;j<l[i].size();j++)
+        //查询数据库并显示
+        auto l=SqlMgr::getInstance()->getUser(strCondition);
+        m_model.clear();
+        m_model.setHorizontalHeaderLabels(QStringList{"用户ID","用户名","权限","实名","电话号码","信用状态"});
+        for(int i =0;i<l.size();i++)
         {
-            if(l[i].size()==4)
+            QList<QStandardItem*> items;
+
+            for(int j=0;j<l[i].size();j++)
             {
-                if(j<2||j==3)
+                if(l[i].size()==7)
                 {
-                 items.append(new QStandardItem(l[i][j]));
+                    if(j<2||j>=3)
+                    {
+                        items.append(new QStandardItem(l[i][j]));
+                    }
                 }
             }
-        }
 
-        m_model.appendRow(items);
+            m_model.appendRow(items);
+        }
     }
 }
+
+
 
 void Cell_UserMgr::on_btn_del_clicked()
 {

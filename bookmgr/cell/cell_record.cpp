@@ -35,3 +35,16 @@ void Cell_Record::initPage(QString strCondition)
         m_model.appendRow(items);
     }
 }
+
+void Cell_Record::on_pushButton_2_clicked()
+{
+    SqlMgr::getInstance()->clearRecord();
+    initPage();
+}
+
+
+void Cell_Record::on_lineEdit_textChanged(const QString &arg1)
+{
+    initPage(arg1);
+}
+
