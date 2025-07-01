@@ -23,6 +23,8 @@ private slots:
 
     void on_le_search_textChanged(const QString &arg1);
 
+    void on_btn_change_clicked();
+
 private:
     Ui::Cell_UserMgr *ui;
     QStandardItemModel m_model;

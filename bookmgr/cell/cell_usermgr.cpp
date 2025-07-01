@@ -1,6 +1,7 @@
 #include "cell_usermgr.h"
 #include "ui_cell_usermgr.h"
 #include"lib/sqlmgr.h"
+#include "dlg_userau.h"
 #include <QFileDialog>
 #include<QMessageBox>
 Cell_UserMgr::Cell_UserMgr(QWidget *parent)
@@ -66,29 +67,12 @@ void Cell_UserMgr::on_btn_del_clicked()
 
 }
 
-
+//增加用户
 void Cell_UserMgr::on_btn_import_clicked()
 {
-    auto strPath = QFileDialog::getOpenFileName(nullptr,"输入文件路径");
-    if(!strPath.isEmpty())
-    {
-        QFile f(strPath);
-        f.open(QFile::ReadOnly);
-        QVector<QStringList>vecData;
-        while(!f.atEnd())
-        {
-            QString str=f.readLine();
-            auto l = str.split(",");
-            if(l.size()!=3)
-            {
-                QMessageBox::information(nullptr,"信息","导入失败");
-                return;
-            }
-            l[l.size()-1]=l[l.size()-1].chopped(2);
-            vecData.push_back(l);
-        }
-        SqlMgr::getInstance()->AddUser(vecData);
-    }
+    dlg_userADD dlg;
+    dlg.exec();
+    initPage();
 }
 
 
@@ -96,5 +80,23 @@ void Cell_UserMgr::on_le_search_textChanged(const QString &arg1)
 {
     QString strCond=QString("where user_name like '%%1%' or user_id like '%%1%'").arg(arg1);
     initPage(strCond);
+}
+
+//修改用户
+void Cell_UserMgr::on_btn_change_clicked()
+{
+    int r = ui->tableView->currentIndex().row();
+    if(r<0)
+    {
+        QMessageBox::information(nullptr,"信息","无选中用户");
+    }
+    else
+    {
+        dlg_userADD dlg;
+        auto id = m_model.item(r,0)->text();
+        dlg.setType(id.toInt());
+        dlg.exec();
+        initPage();
+    }
 }
 

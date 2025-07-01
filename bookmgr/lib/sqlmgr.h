@@ -28,6 +28,8 @@ public:
     QVector<QStringList>getUser(QString strCondition="");
     //添加用户
     void AddUser(QVector<QStringList>);
+    //修改用户
+    void UpdateUsers(QStringList ldate);
     //删除用户
     void delUser(QString strId);
     //获取所有图书
@@ -35,14 +37,15 @@ public:
     //增加图书
     void AddBooks(QVector<QStringList>);
     //修改图书
-    void UpdateBooks(QStringList);
+    void UpdateBooks(QStringList ldate);
     //删除图书
-    void delbook(QString strId);
+    QString delbook(QString strId);
     //获取借阅记录
     QVector<QStringList>getRecord(QString strCondition="");
 
     //清空借阅记录
-    QString clearRecord();
+    void clearRecord();
+
 private:
     QSqlDatabase m_db;
 };

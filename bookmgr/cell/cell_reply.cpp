@@ -12,3 +12,8 @@ Cell_Reply::~Cell_Reply()
 {
     delete ui;
 }
+
+void Cell_Reply::initPage(QString strCondition)
+{
+
+}

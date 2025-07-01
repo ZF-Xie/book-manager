@@ -14,7 +14,7 @@ class Cell_Reply : public QWidget
 public:
     explicit Cell_Reply(QWidget *parent = nullptr);
     ~Cell_Reply();
-
+    void initPage(QString strCondition="");
 private:
     Ui::Cell_Reply *ui;
 };
