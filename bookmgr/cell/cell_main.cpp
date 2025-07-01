@@ -73,7 +73,7 @@ void Cell_Main::dealMenu()
 
         if ("btn_reply" == str)
         {
-            m_replyPage->initPage();
+            m_replyPage->initpage();
             ui->stackedWidget->setCurrentIndex(3);
             break;
         }

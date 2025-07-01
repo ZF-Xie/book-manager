@@ -46,6 +46,13 @@ public:
     //清空借阅记录
     void clearRecord();
 
+    //获取留言
+    QVector<QStringList>getNote(QString strCondition="");
+    //回复留言
+    void replyNote(int feedback_id, QString recontent);
+    //删除留言
+    void deleteNote(int feedback_id);
+
 private:
     QSqlDatabase m_db;
 };
