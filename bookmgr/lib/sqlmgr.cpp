@@ -57,7 +57,7 @@ void SqlMgr::AddUser(QVector<QStringList> v)
     auto ldate=v[0];
     QSqlQuery q(m_db);
     QString strSql=QString("insert into user "
-                             "values(null,'%1',%2,'%3','%4',%5,'%6')")
+                             "values(null,'%1','%2','%3','%4','%5','%6')")
                          .arg(ldate[1])
                          .arg(ldate[2])
                          .arg(ldate[3])
@@ -76,20 +76,15 @@ void SqlMgr::AddUser(QVector<QStringList> v)
 void SqlMgr::UpdateUsers(QStringList ldate)
 {
     QSqlQuery q(m_db);
-    QString strSql=QString("where user_id=%7,"
-                             "update user set user_name = '%1',"
-                             "password_hash='%2',"
-                             "role='%3',"
-                             "true_name='%4',"
-                             "phone_number='%5',"
-                             "status='%6'")
-                         .arg(ldate[0])
+    QString strSql=QString("update user set user_name = '%1',password_hash='%2',role='%3',true_name='%4',phone_number='%5',status='%6' where user_id='%7'")
+
                          .arg(ldate[1])
                          .arg(ldate[2])
                          .arg(ldate[3])
                          .arg(ldate[4])
                          .arg(ldate[5])
-                         .arg(ldate[6]);
+                         .arg(ldate[6])
+                         .arg(ldate[0]);
 
     bool ret=q.exec(strSql);
 
@@ -149,7 +144,7 @@ void SqlMgr::AddBooks(QVector<QStringList>vec)
     auto ldate=vec[0];
     QSqlQuery q(m_db);
     QString strSql=QString("insert into book "
-                             "values(null,'%1','%2','%3','%4','%5',%6,%7,'%8')")
+                             "values(null,'%1','%2','%3','%4','%5','%6','%7','%8')")
                          .arg(ldate[1])
                          .arg(ldate[2])
                          .arg(ldate[3])
@@ -170,15 +165,15 @@ void SqlMgr::AddBooks(QVector<QStringList>vec)
 void SqlMgr::UpdateBooks(QStringList ldate)
 {
     QSqlQuery q(m_db);
-    QString strSql=QString("where book_id=%9,"
-                         "update book set title = '%1',"
+    QString strSql=QString("update book set title = '%1',"
                              "author='%2',"
                              "category1='%3',"
                              "category2='%4',"
                              "price='%5',"
                              "total_copies='%6',"
                              "available_copies='%7',"
-                             "place='%8'")
+                             "place='%8' "
+                             "where book_id=%9")
                          .arg(ldate[0])
                          .arg(ldate[1])
                          .arg(ldate[2])
@@ -203,7 +198,7 @@ QString SqlMgr::delbook(QString strId)
     QSqlQuery q(m_db);
     QString strSql=QString("delete from book where book_id = '%1'").arg(strId);
     bool ret=q.exec(strSql);
-
+    QString strsql=QString("delete from sqlite_sequence where name ='book_id'");
     if(!ret)
     {
         qDebug()<<q.lastError().text();
@@ -244,9 +239,9 @@ QVector<QStringList> SqlMgr::getRecord(QString strCondition)
 void SqlMgr::clearRecord()
 {
     QSqlQuery q(m_db);
-    QString strSql=QString("delete from book;delete from borrow_record where name = 'book';");
+    QString strSql=QString("delete from borrow_record ");
     bool ret=q.exec(strSql);
-
+    QString strsql=QString("delete from sqlite_sequence where name ='borrow_record' ");
     if(!ret)
     {
         qDebug()<<q.lastError().text();

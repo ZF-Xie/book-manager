@@ -75,7 +75,18 @@ void Cell_Bookmgr::on_btu_update_clicked()
     }
     else
     {
-        Dlg_bookAU dlg;
+        QStringList l;
+        l<<m_model.item(r,0)->text();
+        l<<m_model.item(r,1)->text();
+        l<<m_model.item(r,2)->text();
+        l<<m_model.item(r,3)->text();
+        l<<m_model.item(r,4)->text();
+        l<<m_model.item(r,5)->text();
+        l<<m_model.item(r,6)->text();
+        l<<m_model.item(r,7)->text();
+        l<<m_model.item(r,8)->text();
+        l<<"";
+        Dlg_bookAU dlg(l);
         auto id = m_model.item(r,0)->text();
         dlg.setType(id.toInt());
         dlg.exec();

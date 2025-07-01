@@ -12,6 +12,7 @@ class dlg_userADD : public QDialog
     Q_OBJECT
 
 public:
+    explicit dlg_userADD(QStringList l,QWidget *parent = nullptr);
     explicit dlg_userADD(QWidget *parent = nullptr);
     ~dlg_userADD();
     void setType(int id);

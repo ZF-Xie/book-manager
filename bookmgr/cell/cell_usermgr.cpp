@@ -36,7 +36,7 @@ void Cell_UserMgr::initPage(QString strCondition)
             {
                 if(l[i].size()==7)
                 {
-                    if(j<2||j>=3)
+                    if(j<2||j>2)
                     {
                         items.append(new QStandardItem(l[i][j]));
                     }
@@ -92,7 +92,22 @@ void Cell_UserMgr::on_btn_change_clicked()
     }
     else
     {
-        dlg_userADD dlg;
+        QStringList l;
+        l<<m_model.item(r,0)->text();
+
+        l<<m_model.item(r,1)->text();
+
+        l<<"******";
+        l<<m_model.item(r,2)->text();
+
+        l<<m_model.item(r,3)->text();
+
+        l<<m_model.item(r,4)->text();
+
+        l<<m_model.item(r,5)->text();
+
+        l<<"";
+        dlg_userADD dlg(l);
         auto id = m_model.item(r,0)->text();
         dlg.setType(id.toInt());
         dlg.exec();

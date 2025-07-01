@@ -13,6 +13,7 @@ class Dlg_bookAU : public QDialog
 
 public:
     explicit Dlg_bookAU(QWidget *parent = nullptr);
+    explicit Dlg_bookAU(QStringList l,QWidget *parent = nullptr);
     ~Dlg_bookAU();
     void setType(int id);
 private slots:

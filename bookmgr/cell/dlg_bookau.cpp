@@ -8,6 +8,21 @@ Dlg_bookAU::Dlg_bookAU(QWidget *parent)
     ui->setupUi(this);
 }
 
+Dlg_bookAU::Dlg_bookAU(QStringList l,QWidget *parent)
+    : QDialog(parent)
+    , ui(new Ui::Dlg_bookAU)
+{
+    ui->setupUi(this);
+    ui->le_name->setText(l[1]);
+    ui->le_author->setText(l[2]);
+    ui->le_category1->setText(l[3]);
+    ui->le_category2->setText(l[4]);
+    ui->le_price->setText(l[5]);
+    ui->le_number->setText(l[6]);
+    ui->le_aviNum->setText(l[7]);
+    ui->le_place->setText(l[8]);
+}
+
 Dlg_bookAU::~Dlg_bookAU()
 {
     delete ui;
