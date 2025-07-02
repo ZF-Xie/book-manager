@@ -6,6 +6,7 @@ release/cell_finerecord.o
 release/cell_main.o
 release/cell_record.o
 release/cell_reply.o
+release/cell_userfine.o
 release/cell_usermgr.o
 release/dlg_bookau.o
 release/dlg_login.o
@@ -28,6 +29,7 @@ release/moc_cell_finerecord.o
 release/moc_cell_main.o
 release/moc_cell_record.o
 release/moc_cell_reply.o
+release/moc_cell_userfine.o
 release/moc_cell_usermgr.o
 release/moc_dlg_bookau.o
 release/moc_dlg_login.o

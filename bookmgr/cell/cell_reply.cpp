@@ -56,6 +56,10 @@ void Cell_Reply::on_pushButton_clicked()
 void Cell_Reply::on_pushButton_2_clicked()
 {
     int r = ui->tableView->currentIndex().row();
+    if(r < 0)
+    {
+        return;
+    }
     auto feedback_id = m_model.item(r, 0)->text().toInt();
     SqlMgr::getInstance()->deleteNote(feedback_id);
     initpage();

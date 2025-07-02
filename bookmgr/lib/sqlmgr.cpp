@@ -213,7 +213,6 @@ QVector<QStringList> SqlMgr::getRecord(QString strCondition)
 
         QSqlQuery q(m_db);
         QString strSql =QString("select * from borrow_record join user using (user_id) %1").arg(strCondition);
-        qDebug() << "getRecord 执行的 SQL：" << strSql;
         QVector<QStringList> vec;
         bool ret =q.exec(strSql);
         if(!ret){
@@ -256,7 +255,6 @@ QVector<QStringList> SqlMgr::getNote(QString strCondition)
     QSqlQuery q(m_db);
     QString strSql =QString("select * from feedback join user using (user_id) %1").arg(strCondition);
     QVector<QStringList> vec;
-    qDebug() << "getRecord 执行的 SQL：" << strSql;
     bool ret =q.exec(strSql);
     if(!ret){
 

@@ -45,7 +45,12 @@ void cell_bookhis::on_btn_return_clicked()
     if(r<0){return;}
     if(m_model.item(r,7)->text() == "已归还"){
         QMessageBox::information(nullptr,"信息","本书已归还，勿重复操作");
-        return;}
+        return;
+    }
+    if(m_model.item(r,7)->text() == "已遗失"){
+        QMessageBox::information(nullptr,"信息","已支付遗失罚款");
+        return;
+    }
     auto bookid= m_model.item(r,3)->text();
     auto id= m_model.item(r,0)->text();
     QMessageBox::StandardButton reply;

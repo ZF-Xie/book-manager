@@ -7,6 +7,7 @@ FORMS += \
     $$PWD/cell_main.ui \
     $$PWD/cell_record.ui \
     $$PWD/cell_reply.ui \
+    $$PWD/cell_userfine.ui \
     $$PWD/cell_usermgr.ui \
     $$PWD/dlg_bookau.ui \
     $$PWD/dlg_login.ui \
@@ -26,6 +27,7 @@ HEADERS += \
     $$PWD/cell_main.h \
     $$PWD/cell_record.h \
     $$PWD/cell_reply.h \
+    $$PWD/cell_userfine.h \
     $$PWD/cell_usermgr.h \
     $$PWD/dlg_bookau.h \
     $$PWD/dlg_login.h \
@@ -45,6 +47,7 @@ SOURCES += \
     $$PWD/cell_main.cpp \
     $$PWD/cell_record.cpp \
     $$PWD/cell_reply.cpp \
+    $$PWD/cell_userfine.cpp \
     $$PWD/cell_usermgr.cpp \
     $$PWD/dlg_bookau.cpp \
     $$PWD/dlg_login.cpp \

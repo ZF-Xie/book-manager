@@ -25,7 +25,6 @@ QString sql_login::Login(QString strUser, QString strPassword)
         ret = 1;
     else
         ret = 0;
-    qDebug()<<ret;
     if(!ret)
     {
         strUser = "";
@@ -35,7 +34,6 @@ QString sql_login::Login(QString strUser, QString strPassword)
         ret = 1;
     else
         ret = 0;
-    qDebug()<<ret;
     if(ret && strUser == "")
     {
         strUser = " " + strUser;
@@ -53,10 +51,6 @@ bool sql_login::Judge_role(QString strUser)
         ret = 1;
     else
         ret = 0;
-    if(!ret)
-        qDebug()<<"管理员";
-    else
-        qDebug()<<"用户";
     return ret;
 }
 
@@ -67,7 +61,6 @@ int sql_login::Get_id(QString strUser)
     q.exec(strSql);
     q.next();
     int res = q.value(0).toInt();
-    qDebug()<< res;
     return res;
 }
 
@@ -81,7 +74,6 @@ bool sql_login::Register(QString strUser, QString strPassword, QString strTname,
         ret = 1;
     else
         ret = 0;
-    qDebug()<<ret;
     if(!ret)
     {
         strSql = QString("insert into user VALUES(NULL,'%1','%2','用户','%3', '%4', '良好')").arg(strUser, strPassword, strTname, strPhone);

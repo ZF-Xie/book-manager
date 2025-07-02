@@ -14,6 +14,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QDialog>
+#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QToolButton>
@@ -25,14 +26,16 @@ QT_BEGIN_NAMESPACE
 class Ui_dlg_user
 {
 public:
-    QStackedWidget *stackedWidget;
+    QGridLayout *gridLayout;
     QWidget *tool;
     QVBoxLayout *verticalLayout_2;
     QToolButton *btn_booklist;
     QToolButton *btn_bookhis;
     QToolButton *btn_booknote;
+    QToolButton *btn_finelist;
     QSpacerItem *verticalSpacer_2;
     QToolButton *btn_returndlg;
+    QStackedWidget *stackedWidget;
     QButtonGroup *buttonGroup;
 
     void setupUi(QDialog *dlg_user)
@@ -44,14 +47,12 @@ public:
 "QWidget#tool QToolButton:checked{background-color:rgb(67,74,80);}\n"
 "QWidget#tool{background-color:rgb(84,92,100);}\n"
 "QStackedWidget#centralwidget{background-color:color;}"));
-        stackedWidget = new QStackedWidget(dlg_user);
-        stackedWidget->setObjectName(QString::fromUtf8("stackedWidget"));
-        stackedWidget->setGeometry(QRect(120, 0, 1091, 631));
-        stackedWidget->setMaximumSize(QSize(1677215, 16777215));
+        gridLayout = new QGridLayout(dlg_user);
+        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         tool = new QWidget(dlg_user);
         tool->setObjectName(QString::fromUtf8("tool"));
-        tool->setGeometry(QRect(0, 0, 121, 631));
         tool->setMinimumSize(QSize(120, 0));
+        tool->setMaximumSize(QSize(120, 16777215));
         verticalLayout_2 = new QVBoxLayout(tool);
         verticalLayout_2->setSpacing(0);
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
@@ -100,6 +101,18 @@ public:
 
         verticalLayout_2->addWidget(btn_booknote);
 
+        btn_finelist = new QToolButton(tool);
+        buttonGroup->addButton(btn_finelist);
+        btn_finelist->setObjectName(QString::fromUtf8("btn_finelist"));
+        sizePolicy.setHeightForWidth(btn_finelist->sizePolicy().hasHeightForWidth());
+        btn_finelist->setSizePolicy(sizePolicy);
+        btn_finelist->setMaximumSize(QSize(120, 16777215));
+        btn_finelist->setIcon(icon);
+        btn_finelist->setCheckable(true);
+        btn_finelist->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
+
+        verticalLayout_2->addWidget(btn_finelist);
+
         verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
         verticalLayout_2->addItem(verticalSpacer_2);
@@ -109,6 +122,15 @@ public:
         btn_returndlg->setObjectName(QString::fromUtf8("btn_returndlg"));
 
         verticalLayout_2->addWidget(btn_returndlg);
+
+
+        gridLayout->addWidget(tool, 0, 0, 1, 1);
+
+        stackedWidget = new QStackedWidget(dlg_user);
+        stackedWidget->setObjectName(QString::fromUtf8("stackedWidget"));
+        stackedWidget->setMaximumSize(QSize(1677215, 16777215));
+
+        gridLayout->addWidget(stackedWidget, 0, 1, 1, 1);
 
 
         retranslateUi(dlg_user);
@@ -122,6 +144,7 @@ public:
         btn_booklist->setText(QCoreApplication::translate("dlg_user", " \345\233\276\344\271\246\346\237\245\347\234\213", nullptr));
         btn_bookhis->setText(QCoreApplication::translate("dlg_user", " \345\200\237\351\230\205\350\256\260\345\275\225", nullptr));
         btn_booknote->setText(QCoreApplication::translate("dlg_user", "   \347\225\231\350\250\200", nullptr));
+        btn_finelist->setText(QCoreApplication::translate("dlg_user", " \347\275\232\346\254\276\346\237\245\350\257\242", nullptr));
         btn_returndlg->setText(QCoreApplication::translate("dlg_user", "  \350\277\224\345\233\236\347\231\273\351\231\206", nullptr));
     } // retranslateUi
 

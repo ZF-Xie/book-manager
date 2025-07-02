@@ -26,7 +26,6 @@ void Dlg_Login::on_btn_login_clicked()
     auto strName = ui->lineEdit->text();
     auto strPass = ui->lineEdit_2->text();
     auto ret = sql_login::getInstance()->Login(strName, strPass);
-    qDebug()<<ret;
     if(ret == "")
     {
         QMessageBox::critical(this, "登录失败", "用户不存在", QMessageBox::Ok);

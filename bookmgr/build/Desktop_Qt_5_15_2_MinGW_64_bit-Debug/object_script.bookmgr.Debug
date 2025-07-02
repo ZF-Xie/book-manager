@@ -6,6 +6,7 @@ debug/cell_finerecord.o
 debug/cell_main.o
 debug/cell_record.o
 debug/cell_reply.o
+debug/cell_userfine.o
 debug/cell_usermgr.o
 debug/dlg_bookau.o
 debug/dlg_login.o
@@ -28,6 +29,7 @@ debug/moc_cell_finerecord.o
 debug/moc_cell_main.o
 debug/moc_cell_record.o
 debug/moc_cell_reply.o
+debug/moc_cell_userfine.o
 debug/moc_cell_usermgr.o
 debug/moc_dlg_bookau.o
 debug/moc_dlg_login.o
