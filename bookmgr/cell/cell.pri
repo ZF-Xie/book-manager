@@ -3,6 +3,7 @@ FORMS += \
     $$PWD/cell_booklist.ui \
     $$PWD/cell_bookmgr.ui \
     $$PWD/cell_booknote.ui \
+    $$PWD/cell_finerecord.ui \
     $$PWD/cell_main.ui \
     $$PWD/cell_record.ui \
     $$PWD/cell_reply.ui \
@@ -18,6 +19,7 @@ HEADERS += \
     $$PWD/cell_booklist.h \
     $$PWD/cell_bookmgr.h \
     $$PWD/cell_booknote.h \
+    $$PWD/cell_finerecord.h \
     $$PWD/cell_main.h \
     $$PWD/cell_record.h \
     $$PWD/cell_reply.h \
@@ -33,6 +35,7 @@ SOURCES += \
     $$PWD/cell_booklist.cpp \
     $$PWD/cell_bookmgr.cpp \
     $$PWD/cell_booknote.cpp \
+    $$PWD/cell_finerecord.cpp \
     $$PWD/cell_main.cpp \
     $$PWD/cell_record.cpp \
     $$PWD/cell_reply.cpp \

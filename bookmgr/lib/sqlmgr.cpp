@@ -248,6 +248,16 @@ void SqlMgr::clearRecord()
     }
 }
 
+QVector<QStringList> SqlMgr::get_fineRecord(QString strCondition)
+{
+
+}
+
+void SqlMgr::clear_fineRecord()
+{
+
+}
+
 
 
 
