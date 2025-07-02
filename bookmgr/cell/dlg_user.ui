@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1234</width>
+    <width>1208</width>
     <height>630</height>
    </rect>
   </property>
@@ -24,7 +24,7 @@ QStackedWidget#centralwidget{background-color:color;}</string>
     <rect>
      <x>120</x>
      <y>0</y>
-     <width>1181</width>
+     <width>1091</width>
      <height>631</height>
     </rect>
    </property>

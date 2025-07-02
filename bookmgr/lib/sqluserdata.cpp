@@ -48,22 +48,44 @@ QVector<QStringList> Sqluserdata::getBooks(QString strCondition)
     return vec;
 }
 
-QString Sqluserdata::returnbook(int user_id,QString BookId)
+QVector<QStringList> Sqluserdata::getNote(QString strCondition)
+{
+    QSqlQuery*q = new QSqlQuery(m_db);
+    QString strSql =QString("select * from book %1").arg(strCondition);
+
+    QVector<QStringList> vec;
+    bool ret =q->exec(strSql);
+    if(!ret){
+
+        //qDebug()<<q.lastError().text();
+    }else{
+        int iCols=q->record().count();
+        QStringList l;
+        while(q->next()){
+            l.clear();
+            for(int i=0 ;i<iCols;i++){
+                l<<q->value(i).toString();
+
+            }
+            vec.push_back(l);
+
+        }
+
+    }
+    return vec;
+}
+
+QString Sqluserdata::returnbook(int user_id, QString BookId, QString RecordId)
 {
     QSqlQuery q(m_db);
-    QString strSql=QString("update book set available_copies =available_copies +1 where book_id=%1").arg(BookId);
+    QString strSql=QString("update book set available_copies =available_copies +1 where book_id = %1").arg(BookId);
     bool ret =q.exec(strSql);
     if(!ret){
         qDebug()<<q.lastError().text();
     }
     qDebug()<<"!"<<user_id;
-    strSql = QString("UPDATE borrow_record "
-                          "SET return_date = date('now'), status = '已归还' "
-                          "WHERE user_id = %1 "
-                          "  AND book_id = %2 "
-                          "  AND status = '未归还'")
-                      .arg(user_id)
-                      .arg(BookId);
+    strSql = QString("UPDATE borrow_record SET return_date = date('now'), status = '已归还' WHERE record_id = %1 ")
+                      .arg(RecordId);
 
     ret =q.exec(strSql);
     if(!ret){
@@ -84,7 +106,7 @@ QString Sqluserdata::borrowbook(int user_id,QString BookId)
     }
     qDebug()<<"!"<<user_id;
 
-    strSql=QString("insert into borrow_record VALUES(null,%1,%2,date('now'),date('now','+10 days') ,null,'未归还')")
+    strSql=QString("insert into borrow_record VALUES(null,%1,%2,date('now'),date('now','+30 days') ,null,'未归还')")
                  .arg(user_id)
                  .arg(BookId);
     ret =q.exec(strSql);
@@ -94,10 +116,10 @@ QString Sqluserdata::borrowbook(int user_id,QString BookId)
     return QString("");
 }
 
-QVector<QStringList> Sqluserdata::getRecord(QString strCondition)
+QVector<QStringList> Sqluserdata::getRecord(int user_id, QString strCondition)
 {
     QSqlQuery q(m_db);
-    QString strSql =QString("select * from borrow_record %1").arg(strCondition);
+    QString strSql =QString("select * from borrow_record join book using (book_id) where %1").arg(strCondition) + QString("user_id = %1").arg(user_id);
     qDebug() << "getRecord 执行的 SQL：" << strSql;
     QVector<QStringList> vec;
     bool ret =q.exec(strSql);
@@ -105,18 +127,18 @@ QVector<QStringList> Sqluserdata::getRecord(QString strCondition)
 
         qDebug()<<q.lastError().text();
     }else{
-        int iCols=q.record().count();
         QStringList l;
         while(q.next()){
             l.clear();
-            for(int i=0 ;i<iCols;i++){
+            for(int i=0 ;i < 2;i++){
                 l<<q.value(i).toString();
-
+            }
+            l<<q.value(7).toString();
+            for(int i=2 ;i < 7;i++){
+                l<<q.value(i).toString();
             }
             vec.push_back(l);
-
         }
-
     }
     return vec;
 }

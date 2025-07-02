@@ -42,7 +42,7 @@ public:
     {
         if (Cell_Main->objectName().isEmpty())
             Cell_Main->setObjectName(QString::fromUtf8("Cell_Main"));
-        Cell_Main->resize(794, 600);
+        Cell_Main->resize(1107, 600);
         centralwidget = new QWidget(Cell_Main);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         centralwidget->setStyleSheet(QString::fromUtf8("QWidget#tool {background-color:rgb(84,92,100);}\n"

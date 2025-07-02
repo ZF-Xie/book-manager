@@ -25,15 +25,16 @@ public:
 
     //获取全部图书
     QVector<QStringList>getBooks(QString strCondition="");
+    QVector<QStringList>getNote(QString strCondition="");
 
     //图书归还
-    QString returnbook(int user_id,QString BookId);
+    QString returnbook(int user_id, QString BookId, QString RecordId);
     //图书借阅
     QString borrowbook(int user_id,QString BookId);
     //留言图书-牢谢
     QString notebook(QString strUserId,QString BookId);
     //获取借阅记录
-    QVector<QStringList>getRecord(QString strCondition="");
+    QVector<QStringList>getRecord(int user_id, QString strCondition="");
 
 private:
     QSqlDatabase m_db;

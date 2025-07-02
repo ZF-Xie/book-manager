@@ -40,7 +40,7 @@
    <item row="1" column="2">
     <widget class="QPushButton" name="btn_return">
      <property name="text">
-      <string>清空记录</string>
+      <string>归还图书</string>
      </property>
      <property name="name" stdset="0">
       <string>btn</string>

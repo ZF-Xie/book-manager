@@ -39,14 +39,14 @@ public:
     {
         if (dlg_user->objectName().isEmpty())
             dlg_user->setObjectName(QString::fromUtf8("dlg_user"));
-        dlg_user->resize(1234, 630);
+        dlg_user->resize(1208, 630);
         dlg_user->setStyleSheet(QString::fromUtf8("QWidget#tool QToolButton{border:none;background-color:rgb(84,92,100);color:white;min-height:55px;font:14px \"\351\273\221\344\275\223\";padding-left:12px;}\n"
 "QWidget#tool QToolButton:checked{background-color:rgb(67,74,80);}\n"
 "QWidget#tool{background-color:rgb(84,92,100);}\n"
 "QStackedWidget#centralwidget{background-color:color;}"));
         stackedWidget = new QStackedWidget(dlg_user);
         stackedWidget->setObjectName(QString::fromUtf8("stackedWidget"));
-        stackedWidget->setGeometry(QRect(120, 0, 1181, 631));
+        stackedWidget->setGeometry(QRect(120, 0, 1091, 631));
         stackedWidget->setMaximumSize(QSize(1677215, 16777215));
         tool = new QWidget(dlg_user);
         tool->setObjectName(QString::fromUtf8("tool"));

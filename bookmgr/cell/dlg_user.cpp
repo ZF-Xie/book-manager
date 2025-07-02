@@ -1,4 +1,3 @@
-#include "dlg_login.h"
 #include "dlg_user.h"
 #include "ui_dlg_user.h"
 #include<QPushButton>
@@ -6,11 +5,11 @@
 #include"cell_bookhis.h"
 dlg_user::dlg_user(int _user_id, QWidget *parent)
     : QDialog(parent)
-    , ui(new Ui::dlg_user)
+    , user_id(_user_id)
+    ,ui(new Ui::dlg_user)
     ,m_hisPage(nullptr)
     ,m_notePage(nullptr)
     ,m_listPage(nullptr)
-    ,user_id(_user_id)
 {
     ui->setupUi(this);
     initpage();
@@ -33,7 +32,6 @@ void dlg_user::initpage()
     ui->stackedWidget->addWidget(m_hisPage);
     ui->stackedWidget->addWidget(m_notePage);
     ui->stackedWidget->setCurrentIndex(0);
-    qDebug()<<"!!!"<<user_id;
     auto l=ui->tool->children();
     for(auto it:l){
         if(it->objectName().contains("btn")){
@@ -56,10 +54,12 @@ void dlg_user::dealMenu(){
         }
         if("btn_booknote"==str){
             ui->stackedWidget->setCurrentIndex(2);
+            m_notePage->initpage();
             break;
         }
         if("btn_booklist"==str){
             ui->stackedWidget->setCurrentIndex(0);
+            m_listPage->initpage();
             break;
 
         }

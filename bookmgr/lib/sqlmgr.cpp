@@ -174,7 +174,6 @@ void SqlMgr::UpdateBooks(QStringList ldate)
                              "available_copies='%7',"
                              "place='%8' "
                              "where book_id=%9")
-                         .arg(ldate[0])
                          .arg(ldate[1])
                          .arg(ldate[2])
                          .arg(ldate[3])
@@ -182,7 +181,8 @@ void SqlMgr::UpdateBooks(QStringList ldate)
                          .arg(ldate[5])
                          .arg(ldate[6])
                          .arg(ldate[7])
-                         .arg(ldate[8]);
+                         .arg(ldate[8])
+                         .arg(ldate[0]);
 
     bool ret=q.exec(strSql);
 
@@ -198,7 +198,8 @@ QString SqlMgr::delbook(QString strId)
     QSqlQuery q(m_db);
     QString strSql=QString("delete from book where book_id = '%1'").arg(strId);
     bool ret=q.exec(strSql);
-    QString strsql=QString("delete from sqlite_sequence where name ='book_id'");
+    strSql=QString("delete from sqlite_sequence where name ='book_id'");
+    q.exec(strSql);
     if(!ret)
     {
         qDebug()<<q.lastError().text();
@@ -211,24 +212,24 @@ QVector<QStringList> SqlMgr::getRecord(QString strCondition)
 {
 
         QSqlQuery q(m_db);
-        QString strSql =QString("select * from borrow_record %1").arg(strCondition);
+        QString strSql =QString("select * from borrow_record %1 join user using (user_id)").arg(strCondition);
 
         QVector<QStringList> vec;
         bool ret =q.exec(strSql);
         if(!ret){
-
             //qDebug()<<q.lastError().text();
         }else{
-            int iCols=q.record().count();
             QStringList l;
             while(q.next()){
                 l.clear();
-                for(int i=0 ;i<iCols;i++){
+                for(int i=0 ;i < 2;i++){
                     l<<q.value(i).toString();
-
+                }
+                l<<q.value(7).toString();
+                for(int i=2 ;i < 7;i++){
+                    l<<q.value(i).toString();
                 }
                 vec.push_back(l);
-
             }
 
         }
@@ -253,7 +254,7 @@ void SqlMgr::clearRecord()
 QVector<QStringList> SqlMgr::getNote(QString strCondition)
 {
     QSqlQuery q(m_db);
-    QString strSql =QString("select * from feedback %1").arg(strCondition);
+    QString strSql =QString("select * from feedback %1 join user using (user_id)").arg(strCondition);
 
     QVector<QStringList> vec;
     bool ret =q.exec(strSql);
@@ -261,18 +262,18 @@ QVector<QStringList> SqlMgr::getNote(QString strCondition)
 
         //qDebug()<<q.lastError().text();
     }else{
-        int iCols=q.record().count();
         QStringList l;
         while(q.next()){
             l.clear();
-            for(int i=0 ;i<iCols;i++){
+            for(int i=0 ;i < 2;i++){
                 l<<q.value(i).toString();
-
+            }
+            l<<q.value(6).toString();
+            for(int i=2 ;i < 6;i++){
+                l<<q.value(i).toString();
             }
             vec.push_back(l);
-
         }
-
     }
     return vec;
 }

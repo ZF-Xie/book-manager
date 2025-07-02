@@ -14,3 +14,9 @@ RESOURCES += \
 
 DISTFILES += \
     res/返回.svg
+
+FORMS +=
+
+HEADERS +=
+
+SOURCES +=
