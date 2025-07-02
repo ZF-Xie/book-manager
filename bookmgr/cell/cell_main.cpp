@@ -20,6 +20,7 @@ Cell_Main::~Cell_Main()
     delete ui;
 }
 
+
 void Cell_Main::initPage()
 {
     m_userPage=new Cell_UserMgr(this);

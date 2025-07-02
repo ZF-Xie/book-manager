@@ -23,8 +23,8 @@ int login_event(Dlg_Login* dlg){
     }
     if(ret > 0)
     {
-        dlg_user w;
-        w.user_id = ret;
+        dlg_user w(ret);
+        qDebug()<<"!!!!!!!"<<w.user_id;
         int res = w.exec();
         if(res == -3)
         {

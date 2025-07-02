@@ -60,8 +60,10 @@ void Cell_Bookmgr::on_btu_update_clicked()
 }
 
 
-void Cell_Bookmgr::on_le_search_textChanged(const QString &arg1)
-{
+void Cell_Bookmgr::on_le_search_textChanged(const QString &arg1){
 
 }
+
+
+
 

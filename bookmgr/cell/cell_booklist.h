@@ -19,9 +19,12 @@ public:
 
 private slots:
 
+
     void on_btn_borrow_clicked();
 
     void on_le_search_textChanged(const QString &arg1);
+
+
 
 private:
     Ui::Cell_booklist *ui;
