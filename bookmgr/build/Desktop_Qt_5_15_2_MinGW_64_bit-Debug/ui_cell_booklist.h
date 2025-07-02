@@ -27,7 +27,7 @@ class Ui_Cell_booklist
 public:
     QGridLayout *gridLayout;
     QLineEdit *le_search;
-    QPushButton *pushButton_2;
+    QPushButton *btn_borrow;
     QSpacerItem *spacer;
     QLabel *label_2;
     QLabel *label;
@@ -45,10 +45,10 @@ public:
 
         gridLayout->addWidget(le_search, 1, 1, 1, 1);
 
-        pushButton_2 = new QPushButton(Cell_booklist);
-        pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
+        btn_borrow = new QPushButton(Cell_booklist);
+        btn_borrow->setObjectName(QString::fromUtf8("btn_borrow"));
 
-        gridLayout->addWidget(pushButton_2, 1, 2, 1, 1);
+        gridLayout->addWidget(btn_borrow, 1, 2, 1, 1);
 
         spacer = new QSpacerItem(208, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
@@ -79,7 +79,8 @@ public:
     void retranslateUi(QWidget *Cell_booklist)
     {
         Cell_booklist->setWindowTitle(QCoreApplication::translate("Cell_booklist", "Form", nullptr));
-        pushButton_2->setText(QCoreApplication::translate("Cell_booklist", "\345\200\237\351\230\205", nullptr));
+        btn_borrow->setText(QCoreApplication::translate("Cell_booklist", "\345\200\237\351\230\205", nullptr));
+        btn_borrow->setProperty("name", QVariant(QCoreApplication::translate("Cell_booklist", "btn", nullptr)));
         label_2->setText(QCoreApplication::translate("Cell_booklist", "Qt\345\233\276\344\271\246\347\256\241\347\220\206\347\263\273\347\273\237/\345\233\276\344\271\246\346\237\245\347\234\213", nullptr));
         label->setText(QCoreApplication::translate("Cell_booklist", "\345\233\276\344\271\246\346\243\200\347\264\242", nullptr));
     } // retranslateUi

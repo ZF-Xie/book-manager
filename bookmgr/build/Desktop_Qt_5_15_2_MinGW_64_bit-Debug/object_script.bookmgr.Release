@@ -2,6 +2,7 @@ release/cell_bookhis.o
 release/cell_booklist.o
 release/cell_bookmgr.o
 release/cell_booknote.o
+release/cell_finerecord.o
 release/cell_main.o
 release/cell_record.o
 release/cell_reply.o
@@ -21,6 +22,7 @@ release/moc_cell_bookhis.o
 release/moc_cell_booklist.o
 release/moc_cell_bookmgr.o
 release/moc_cell_booknote.o
+release/moc_cell_finerecord.o
 release/moc_cell_main.o
 release/moc_cell_record.o
 release/moc_cell_reply.o

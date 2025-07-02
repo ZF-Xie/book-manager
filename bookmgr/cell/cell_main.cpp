@@ -10,6 +10,7 @@ Cell_Main::Cell_Main(QWidget *parent)
     ,m_bookPage(nullptr)
     ,m_recordPage(nullptr)
     ,m_replyPage(nullptr)
+    ,m_finePage(nullptr)
 {
     ui->setupUi(this);
     initPage();
@@ -27,10 +28,14 @@ void Cell_Main::initPage()
     m_bookPage=new Cell_Bookmgr(this);
     m_recordPage=new Cell_Record(this);
     m_replyPage=new Cell_Reply(this);
+    m_finePage= new Cell_fineRecord(this);
     ui->stackedWidget->addWidget(m_userPage);
     ui->stackedWidget->addWidget(m_bookPage);
     ui->stackedWidget->addWidget(m_recordPage);
     ui->stackedWidget->addWidget(m_replyPage);
+    qDebug()<<1;
+    ui->stackedWidget->addWidget(m_finePage);
+    qDebug()<<2;
     ui->stackedWidget->setCurrentIndex(0);
     
     auto l = ui->tool->children();
@@ -81,6 +86,13 @@ void Cell_Main::dealMenu()
 
         if ("toolButton_2" == str)
         {
+            ui->stackedWidget->setCurrentIndex(5);
+            break;
+        }
+
+        if("btn_fine"==str)
+        {
+            m_finePage->initPage();
             ui->stackedWidget->setCurrentIndex(4);
             break;
         }

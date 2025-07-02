@@ -6,6 +6,7 @@
 #include "cell_bookmgr.h"
 #include "cell_record.h"
 #include "cell_reply.h"
+#include "cell_finerecord.h"
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class Cell_Main;
@@ -44,5 +45,6 @@ private:
     Cell_Bookmgr*m_bookPage;
     Cell_Record*m_recordPage;
     Cell_Reply*m_replyPage;
+    Cell_fineRecord*m_finePage;
 };
 #endif // CELL_MAIN_H
