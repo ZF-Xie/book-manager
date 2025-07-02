@@ -34,7 +34,7 @@ Cell_Reply::~Cell_Reply()
 
 void Cell_Reply::on_lineEdit_textChanged(const QString &arg1)
 {
-    QString strCond=QString("where user_id like '%%1%' or submit_date like '%%1%' or status like '%%1%'").arg(arg1);
+    QString strCond=QString("where user_id like '%%1%' or content like '%%1%' or submit_date like '%%1%' or feedback.status like '%%1%'").arg(arg1);
     initpage(strCond);
 }
 

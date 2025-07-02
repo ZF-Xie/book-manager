@@ -19,9 +19,9 @@ Cell_fineRecord::~Cell_fineRecord()
 
 void Cell_fineRecord::initPage(QString strCondition)
 {
-    auto l=SqlMgr::getInstance()->getRecord(strCondition);
+    auto l=SqlMgr::getInstance()->getfineRecord(strCondition);
     m_model.clear();
-    m_model.setHorizontalHeaderLabels(QStringList{"罚款ID","所借书目ID","被罚者ID","罚款份额","通知日期","还款日期","当前信用状态"});
+    m_model.setHorizontalHeaderLabels(QStringList{"罚款ID","所借书目ID","被罚者ID","罚款份额","产生日期","还款日期","是否支付罚款"});
     for(int i =0;i<l.size();i++)
     {
         QList<QStandardItem*> items;
@@ -40,7 +40,7 @@ void Cell_fineRecord::initPage(QString strCondition)
 
 void Cell_fineRecord::on_btu_del_clicked()
 {
-    SqlMgr::getInstance()->clearRecord();
+    SqlMgr::getInstance()->clearfineRecord();
     initPage();
 }
 
@@ -48,6 +48,7 @@ void Cell_fineRecord::on_btu_del_clicked()
 
 void Cell_fineRecord::on_le_search_textChanged(const QString &arg1)
 {
-    initPage(arg1);
+    QString strCond=QString("where issue_date like '%%1%' or record_id like '%%1%' or user_id like '%%1%' or fine.status like '%%1%'").arg(arg1);
+    initPage(strCond);
 }
 

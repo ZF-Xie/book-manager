@@ -25,11 +25,11 @@ public:
     QGridLayout *gridLayout;
     QWidget *widget;
     QGridLayout *gridLayout_2;
+    QLabel *label;
     QWidget *widget_2;
     QGridLayout *gridLayout_3;
     QPushButton *pushButton_2;
     QPushButton *pushButton;
-    QLabel *label;
     QTextEdit *textEdit_2;
     QTextEdit *textEdit;
     QLabel *label_3;
@@ -50,6 +50,11 @@ public:
         widget->setObjectName(QString::fromUtf8("widget"));
         gridLayout_2 = new QGridLayout(widget);
         gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
+        label = new QLabel(widget);
+        label->setObjectName(QString::fromUtf8("label"));
+
+        gridLayout_2->addWidget(label, 1, 1, 1, 1);
+
         widget_2 = new QWidget(widget);
         widget_2->setObjectName(QString::fromUtf8("widget_2"));
         widget_2->setMinimumSize(QSize(100, 0));
@@ -70,11 +75,6 @@ public:
 
 
         gridLayout_2->addWidget(widget_2, 3, 0, 1, 4);
-
-        label = new QLabel(widget);
-        label->setObjectName(QString::fromUtf8("label"));
-
-        gridLayout_2->addWidget(label, 1, 1, 1, 1);
 
         textEdit_2 = new QTextEdit(widget);
         textEdit_2->setObjectName(QString::fromUtf8("textEdit_2"));
@@ -105,9 +105,9 @@ public:
     void retranslateUi(QWidget *win_reply)
     {
         win_reply->setWindowTitle(QCoreApplication::translate("win_reply", "Form", nullptr));
+        label->setText(QCoreApplication::translate("win_reply", "\347\225\231\350\250\200\345\206\205\345\256\271", nullptr));
         pushButton_2->setText(QCoreApplication::translate("win_reply", "\345\217\226\346\266\210", nullptr));
         pushButton->setText(QCoreApplication::translate("win_reply", "\347\241\256\350\256\244", nullptr));
-        label->setText(QCoreApplication::translate("win_reply", "\347\225\231\350\250\200\345\206\205\345\256\271", nullptr));
         label_3->setText(QCoreApplication::translate("win_reply", "\345\233\236\345\244\215", nullptr));
     } // retranslateUi
 

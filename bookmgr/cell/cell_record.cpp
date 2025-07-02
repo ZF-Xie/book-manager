@@ -44,6 +44,7 @@ void Cell_Record::on_pushButton_2_clicked()
 
 void Cell_Record::on_lineEdit_textChanged(const QString &arg1)
 {
-    initPage(arg1);
+    QString strCond=QString("where book_id like '%%1%' or user_id like '%%1%'").arg(arg1);
+    initPage(strCond);
 }
 

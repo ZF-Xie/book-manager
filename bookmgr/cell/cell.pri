@@ -13,7 +13,9 @@ FORMS += \
     $$PWD/dlg_register.ui \
     $$PWD/dlg_user.ui \
     $$PWD/dlg_userau.ui \
-    $$PWD/win_reply.ui
+    $$PWD/win_note.ui \
+    $$PWD/win_reply.ui \
+    $$PWD/win_viewnote.ui
 
 HEADERS += \
     $$PWD/cell_bookhis.h \
@@ -30,7 +32,9 @@ HEADERS += \
     $$PWD/dlg_register.h \
     $$PWD/dlg_user.h \
     $$PWD/dlg_userau.h \
-    $$PWD/win_reply.h
+    $$PWD/win_note.h \
+    $$PWD/win_reply.h \
+    $$PWD/win_viewnote.h
 
 SOURCES += \
     $$PWD/cell_bookhis.cpp \
@@ -48,4 +52,6 @@ SOURCES += \
     $$PWD/dlg_user.cpp \
     $$PWD/dlg_userau.cpp \
     $$PWD/main.cpp \
-    $$PWD/win_reply.cpp
+    $$PWD/win_note.cpp \
+    $$PWD/win_reply.cpp \
+    $$PWD/win_viewnote.cpp

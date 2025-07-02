@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1107</width>
+    <width>1153</width>
     <height>600</height>
    </rect>
   </property>
@@ -16,7 +16,7 @@
   <widget class="QWidget" name="centralwidget">
    <property name="styleSheet">
     <string notr="true">QWidget#tool {background-color:rgb(84,92,100);}
-QWidget#tool QToolButton{border:none;background:rgb(84,92,100);color:white;min-height:55px;font:14px&quot;楷体&quot;;padding-left:12px;}
+QWidget#tool QToolButton{border:none;background:rgb(84,92,100);color:white;min-height:55px;font:18px&quot;楷体&quot;;padding-left:12px;}
 QWidget#tool QToolButton:checked{border:none;background:rgb(67,74,80);}
 QStackedWidget#stackedWidget{background-color:white;}</string>
    </property>

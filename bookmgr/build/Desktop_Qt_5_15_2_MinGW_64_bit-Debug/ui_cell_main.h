@@ -43,11 +43,11 @@ public:
     {
         if (Cell_Main->objectName().isEmpty())
             Cell_Main->setObjectName(QString::fromUtf8("Cell_Main"));
-        Cell_Main->resize(1107, 600);
+        Cell_Main->resize(1153, 600);
         centralwidget = new QWidget(Cell_Main);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         centralwidget->setStyleSheet(QString::fromUtf8("QWidget#tool {background-color:rgb(84,92,100);}\n"
-"QWidget#tool QToolButton{border:none;background:rgb(84,92,100);color:white;min-height:55px;font:14px\"\346\245\267\344\275\223\";padding-left:12px;}\n"
+"QWidget#tool QToolButton{border:none;background:rgb(84,92,100);color:white;min-height:55px;font:18px\"\346\245\267\344\275\223\";padding-left:12px;}\n"
 "QWidget#tool QToolButton:checked{border:none;background:rgb(67,74,80);}\n"
 "QStackedWidget#stackedWidget{background-color:white;}"));
         gridLayout_2 = new QGridLayout(centralwidget);

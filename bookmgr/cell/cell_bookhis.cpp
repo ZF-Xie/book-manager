@@ -2,6 +2,7 @@
 #include "ui_cell_bookhis.h"
 #include"lib/sqluserdata.h"
 #include <QMessageBox>
+#include <ui_book_br.h>
 
 void cell_bookhis::initPage(QString strCondition)
 {
