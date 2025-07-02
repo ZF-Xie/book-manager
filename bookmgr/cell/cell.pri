@@ -7,9 +7,12 @@ FORMS += \
     $$PWD/cell_record.ui \
     $$PWD/cell_reply.ui \
     $$PWD/cell_usermgr.ui \
+    $$PWD/dlg_bookau.ui \
     $$PWD/dlg_login.ui \
     $$PWD/dlg_register.ui \
-    $$PWD/dlg_user.ui
+    $$PWD/dlg_user.ui \
+    $$PWD/dlg_userau.ui \
+    $$PWD/win_reply.ui
 
 HEADERS += \
     $$PWD/cell_bookhis.h \
@@ -20,9 +23,12 @@ HEADERS += \
     $$PWD/cell_record.h \
     $$PWD/cell_reply.h \
     $$PWD/cell_usermgr.h \
+    $$PWD/dlg_bookau.h \
     $$PWD/dlg_login.h \
     $$PWD/dlg_register.h \
-    $$PWD/dlg_user.h
+    $$PWD/dlg_user.h \
+    $$PWD/dlg_userau.h \
+    $$PWD/win_reply.h
 
 SOURCES += \
     $$PWD/cell_bookhis.cpp \
@@ -33,7 +39,10 @@ SOURCES += \
     $$PWD/cell_record.cpp \
     $$PWD/cell_reply.cpp \
     $$PWD/cell_usermgr.cpp \
+    $$PWD/dlg_bookau.cpp \
     $$PWD/dlg_login.cpp \
     $$PWD/dlg_register.cpp \
     $$PWD/dlg_user.cpp \
-    $$PWD/main.cpp
+    $$PWD/dlg_userau.cpp \
+    $$PWD/main.cpp \
+    $$PWD/win_reply.cpp

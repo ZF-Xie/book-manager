@@ -60,18 +60,21 @@ void Cell_Main::dealMenu()
 
         if ("btn_book" == str)
         {
+            m_bookPage->initPage();
             ui->stackedWidget->setCurrentIndex(1);
             break;
         }
 
         if ("btn_his" == str)
         {
+            m_recordPage->initPage();
             ui->stackedWidget->setCurrentIndex(2);
             break;
         }
 
         if ("btn_reply" == str)
         {
+            m_replyPage->initpage();
             ui->stackedWidget->setCurrentIndex(3);
             break;
         }

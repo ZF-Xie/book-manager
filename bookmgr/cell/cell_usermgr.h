@@ -15,12 +15,15 @@ public:
     explicit Cell_UserMgr(QWidget *parent = nullptr);
     ~Cell_UserMgr();
     void initPage(QString strCondition="");
+
 private slots:
     void on_btn_del_clicked();
 
     void on_btn_import_clicked();
 
     void on_le_search_textChanged(const QString &arg1);
+
+    void on_btn_change_clicked();
 
 private:
     Ui::Cell_UserMgr *ui;

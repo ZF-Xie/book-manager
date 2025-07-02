@@ -23,21 +23,21 @@ void Sqluserdata::init()
 
 QVector<QStringList> Sqluserdata::getBooks(QString strCondition)
 {
-    QSqlQuery q(m_db);
+    QSqlQuery*q = new QSqlQuery(m_db);
     QString strSql =QString("select * from book %1").arg(strCondition);
 
     QVector<QStringList> vec;
-    bool ret =q.exec(strSql);
+    bool ret =q->exec(strSql);
     if(!ret){
 
         //qDebug()<<q.lastError().text();
     }else{
-        int iCols=q.record().count();
+        int iCols=q->record().count();
         QStringList l;
-        while(q.next()){
+        while(q->next()){
             l.clear();
             for(int i=0 ;i<iCols;i++){
-                l<<q.value(i).toString();
+                l<<q->value(i).toString();
 
             }
             vec.push_back(l);

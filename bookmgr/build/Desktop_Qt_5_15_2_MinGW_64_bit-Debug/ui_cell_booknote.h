@@ -80,7 +80,7 @@ public:
     {
         cell_booknote->setWindowTitle(QCoreApplication::translate("cell_booknote", "Form", nullptr));
         label_2->setText(QCoreApplication::translate("cell_booknote", "Qt\345\233\276\344\271\246\347\256\241\347\220\206\347\263\273\347\273\237/\347\225\231\350\250\200", nullptr));
-        label->setText(QCoreApplication::translate("cell_booknote", "\345\233\276\344\271\246\346\243\200\347\264\242", nullptr));
+        label->setText(QString());
         pushButton_2->setText(QCoreApplication::translate("cell_booknote", "\347\241\256\350\256\244\347\225\231\350\250\200", nullptr));
     } // retranslateUi
 

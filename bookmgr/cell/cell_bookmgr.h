@@ -1,7 +1,7 @@
 #ifndef CELL_BOOKMGR_H
 #define CELL_BOOKMGR_H
 
-#include<QStandardItem>
+#include<QStandardItemModel>
 #include <QWidget>
 
 namespace Ui {
@@ -15,7 +15,8 @@ class Cell_Bookmgr : public QWidget
 public:
     explicit Cell_Bookmgr(QWidget *parent = nullptr);
     ~Cell_Bookmgr();
-    void initPage(QString strCondition);
+    void initPage(QString strCondition="");
+
 private slots:
     void on_btn_add_clicked();
 
