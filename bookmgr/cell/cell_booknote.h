@@ -19,7 +19,11 @@ public:
     ~cell_booknote();
 
 private slots:
-    void on_le_search_textChanged(const QString &arg1);
+    void on_lineEdit_textChanged(const QString &arg1);
+
+    void on_pushButton_2_clicked();
+
+    void on_pushButton_clicked();
 
 private:
     Ui::cell_booknote *ui;

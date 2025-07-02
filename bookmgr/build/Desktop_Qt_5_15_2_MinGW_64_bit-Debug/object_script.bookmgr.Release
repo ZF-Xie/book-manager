@@ -10,6 +10,12 @@ release/dlg_login.o
 release/dlg_register.o
 release/dlg_user.o
 release/main.o
+<<<<<<< Updated upstream
+=======
+release/win_note.o
+release/win_reply.o
+release/win_viewnote.o
+>>>>>>> Stashed changes
 release/sql_login.o
 release/sqlmgr.o
 release/sqluserdata.o
@@ -25,3 +31,10 @@ release/moc_cell_usermgr.o
 release/moc_dlg_login.o
 release/moc_dlg_register.o
 release/moc_dlg_user.o
+<<<<<<< Updated upstream
+=======
+release/moc_dlg_userau.o
+release/moc_win_note.o
+release/moc_win_reply.o
+release/moc_win_viewnote.o
+>>>>>>> Stashed changes

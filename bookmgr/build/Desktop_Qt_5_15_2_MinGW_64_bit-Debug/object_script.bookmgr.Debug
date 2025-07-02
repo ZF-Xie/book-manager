@@ -10,6 +10,12 @@ debug/dlg_login.o
 debug/dlg_register.o
 debug/dlg_user.o
 debug/main.o
+<<<<<<< Updated upstream
+=======
+debug/win_note.o
+debug/win_reply.o
+debug/win_viewnote.o
+>>>>>>> Stashed changes
 debug/sql_login.o
 debug/sqlmgr.o
 debug/sqluserdata.o
@@ -25,3 +31,10 @@ debug/moc_cell_usermgr.o
 debug/moc_dlg_login.o
 debug/moc_dlg_register.o
 debug/moc_dlg_user.o
+<<<<<<< Updated upstream
+=======
+debug/moc_dlg_userau.o
+debug/moc_win_note.o
+debug/moc_win_reply.o
+debug/moc_win_viewnote.o
+>>>>>>> Stashed changes
