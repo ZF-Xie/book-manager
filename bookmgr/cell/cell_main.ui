@@ -25,7 +25,7 @@ QStackedWidget#stackedWidget{background-color:white;}</string>
      <widget class="QWidget" name="tool" native="true">
       <property name="maximumSize">
        <size>
-        <width>120</width>
+        <width>160</width>
         <height>16777215</height>
        </size>
       </property>

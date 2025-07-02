@@ -54,7 +54,7 @@ public:
         gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
         tool = new QWidget(centralwidget);
         tool->setObjectName(QString::fromUtf8("tool"));
-        tool->setMaximumSize(QSize(120, 16777215));
+        tool->setMaximumSize(QSize(160, 16777215));
         gridLayout = new QGridLayout(tool);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         toolButton_2 = new QToolButton(tool);
