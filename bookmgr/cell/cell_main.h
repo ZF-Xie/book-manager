@@ -19,6 +19,20 @@ class Cell_Main : public QMainWindow
 public:
     Cell_Main(QWidget *parent = nullptr);
     ~Cell_Main();
+
+    //为符合账密验证创建的函数，不清楚可不可以
+    static Cell_Main* instance;
+
+    static Cell_Main* getInstance(){
+        if(nullptr== instance){
+            instance=new Cell_Main();
+
+        }
+        return instance;
+    }
+
+
+
     void initPage();
     void dealMenu();
 private slots:

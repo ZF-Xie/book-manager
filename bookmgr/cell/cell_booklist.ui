@@ -18,9 +18,12 @@
     <widget class="QLineEdit" name="le_search"/>
    </item>
    <item row="1" column="2">
-    <widget class="QPushButton" name="pushButton_2">
+    <widget class="QPushButton" name="btn_borrow">
      <property name="text">
       <string>借阅</string>
+     </property>
+     <property name="name" stdset="0">
+      <string>btn</string>
      </property>
     </widget>
    </item>

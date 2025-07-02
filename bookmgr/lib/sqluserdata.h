@@ -27,9 +27,9 @@ public:
     QVector<QStringList>getBooks(QString strCondition="");
 
     //图书归还
-    QString returnbook(QString strUserId,QString BookId);
+    QString returnbook(int user_id,QString BookId);
     //图书借阅
-    QString borrowbook(QString strUserId,QString BookId);
+    QString borrowbook(int user_id,QString BookId);
     //留言图书-牢谢
     QString notebook(QString strUserId,QString BookId);
     //获取借阅记录

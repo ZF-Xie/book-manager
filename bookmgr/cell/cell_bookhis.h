@@ -14,13 +14,18 @@ class cell_bookhis : public QWidget
 
 public:
     int user_id;
+    void setType(bool isReturn);
     explicit cell_bookhis(QWidget *parent = nullptr);
     void initPage(QString strCondition="");
     ~cell_bookhis();
 
 private slots:
+
     void on_btn_return_clicked();
+
     void on_le_search_textChanged(const QString &arg1);
+
+
 
 private:
     Ui::cell_bookhis *ui;

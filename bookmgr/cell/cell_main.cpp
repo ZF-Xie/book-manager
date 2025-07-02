@@ -20,6 +20,7 @@ Cell_Main::~Cell_Main()
     delete ui;
 }
 
+
 void Cell_Main::initPage()
 {
     m_userPage=new Cell_UserMgr(this);
@@ -73,7 +74,7 @@ void Cell_Main::dealMenu()
 
         if ("btn_reply" == str)
         {
-            m_replyPage->initPage();
+            m_replyPage->initpage();
             ui->stackedWidget->setCurrentIndex(3);
             break;
         }

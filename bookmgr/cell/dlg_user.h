@@ -17,7 +17,7 @@ class dlg_user : public QDialog
 public:
     int user_id;
 public:
-    explicit dlg_user(QWidget *parent = nullptr);
+    explicit dlg_user(int _user_id, QWidget *parent = nullptr);
     ~dlg_user();
     void initpage();
     void dealMenu();
