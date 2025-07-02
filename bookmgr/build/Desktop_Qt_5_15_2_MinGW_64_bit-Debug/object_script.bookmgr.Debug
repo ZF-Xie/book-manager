@@ -2,6 +2,7 @@ debug/cell_bookhis.o
 debug/cell_booklist.o
 debug/cell_bookmgr.o
 debug/cell_booknote.o
+debug/cell_finerecord.o
 debug/cell_main.o
 debug/cell_record.o
 debug/cell_reply.o
@@ -21,6 +22,7 @@ debug/moc_cell_bookhis.o
 debug/moc_cell_booklist.o
 debug/moc_cell_bookmgr.o
 debug/moc_cell_booknote.o
+debug/moc_cell_finerecord.o
 debug/moc_cell_main.o
 debug/moc_cell_record.o
 debug/moc_cell_reply.o

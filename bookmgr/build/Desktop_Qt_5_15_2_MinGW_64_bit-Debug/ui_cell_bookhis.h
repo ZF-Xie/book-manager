@@ -76,7 +76,7 @@ public:
         cell_bookhis->setWindowTitle(QCoreApplication::translate("cell_bookhis", "Form", nullptr));
         label_2->setText(QCoreApplication::translate("cell_bookhis", "\347\256\241\347\220\206\345\221\230\347\263\273\347\273\237\345\200\237\351\230\205\350\256\260\345\275\225", nullptr));
         label->setText(QCoreApplication::translate("cell_bookhis", "\346\220\234\347\264\242", nullptr));
-        btn_return->setText(QCoreApplication::translate("cell_bookhis", "\345\275\222\350\277\230\345\233\276\344\271\246", nullptr));
+        btn_return->setText(QCoreApplication::translate("cell_bookhis", "\346\270\205\347\251\272\350\256\260\345\275\225", nullptr));
         btn_return->setProperty("name", QVariant(QCoreApplication::translate("cell_bookhis", "btn", nullptr)));
     } // retranslateUi
 

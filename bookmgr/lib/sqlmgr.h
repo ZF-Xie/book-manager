@@ -52,6 +52,10 @@ public:
     void replyNote(int feedback_id, QString recontent);
     //删除留言
     void deleteNote(int feedback_id);
+    //获取罚款记录
+    QVector<QStringList>getfineRecord(QString strCondition="");
+    //清空罚款记录
+    void clearfineRecord();
 
 private:
     QSqlDatabase m_db;
