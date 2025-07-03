@@ -214,7 +214,7 @@ QString count_amount(QString due_date, QString now_date, QString price, bool st)
     qDebug()<<due_month;
     qDebug()<<now_year;
     qDebug()<<now_month;
-
+    qDebug()<<price;
     if(!st){
         int mod = 1;
         while(mod < d)
@@ -252,11 +252,12 @@ void Sqluserdata::updateFine()
         QString due_date = q.value(4).toString();
         QString record_id = q.value(0).toString();
         QString user_id = q.value(1).toString();
+        QString book_id = q.value(2).toString();
         QSqlQuery qp(m_db);
-        QString strSqlp =QString("select * from borrow_record join book using (book_id) where record_id = %1").arg(record_id);
+        QString strSqlp =QString("select * from book where book_id = %1").arg(book_id);
         qp.exec(strSqlp);
         qp.next();
-        QString price = qp.value(11).toString();
+        QString price = qp.value(5).toString();
         if(due_date < now_date)
         {
             qDebug()<<"@@@@@";
