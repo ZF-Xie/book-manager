@@ -29,9 +29,15 @@ QStackedWidget#stackedWidget{background-color:white;}</string>
    <layout class="QGridLayout" name="gridLayout_2">
     <item row="0" column="0">
      <widget class="QWidget" name="tool" native="true">
+      <property name="minimumSize">
+       <size>
+        <width>160</width>
+        <height>0</height>
+       </size>
+      </property>
       <property name="maximumSize">
        <size>
-        <width>250</width>
+        <width>200</width>
         <height>16777215</height>
        </size>
       </property>
