@@ -21,7 +21,7 @@ void Cell_fineRecord::initPage(QString strCondition)
 {
     auto l=SqlMgr::getInstance()->getfineRecord(strCondition);
     m_model.clear();
-    m_model.setHorizontalHeaderLabels(QStringList{"罚款ID","所借书目ID","被罚者ID","罚款份额","产生日期","还款日期","是否支付罚款"});
+    m_model.setHorizontalHeaderLabels(QStringList{"罚款ID","借书ID","被罚者ID","罚款份额","产生日期","还款日期","是否支付罚款"});
     for(int i =0;i<l.size();i++)
     {
         QList<QStandardItem*> items;
