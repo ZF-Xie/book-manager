@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1153</width>
+    <width>1186</width>
     <height>600</height>
    </rect>
   </property>
@@ -31,7 +31,7 @@ QStackedWidget#stackedWidget{background-color:white;}</string>
      <widget class="QWidget" name="tool" native="true">
       <property name="maximumSize">
        <size>
-        <width>250</width>
+        <width>200</width>
         <height>16777215</height>
        </size>
       </property>

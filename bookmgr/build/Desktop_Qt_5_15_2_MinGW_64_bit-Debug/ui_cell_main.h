@@ -43,7 +43,7 @@ public:
     {
         if (Cell_Main->objectName().isEmpty())
             Cell_Main->setObjectName(QString::fromUtf8("Cell_Main"));
-        Cell_Main->resize(1153, 600);
+        Cell_Main->resize(1186, 600);
         Cell_Main->setMinimumSize(QSize(200, 0));
         centralwidget = new QWidget(Cell_Main);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
@@ -55,7 +55,7 @@ public:
         gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
         tool = new QWidget(centralwidget);
         tool->setObjectName(QString::fromUtf8("tool"));
-        tool->setMaximumSize(QSize(250, 16777215));
+        tool->setMaximumSize(QSize(200, 16777215));
         gridLayout = new QGridLayout(tool);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         toolButton_2 = new QToolButton(tool);
