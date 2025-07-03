@@ -5,7 +5,7 @@
 #include"cell_booklist.h"
 #include"cell_booknote.h"
 #include"cell_bookhis.h"
-
+#include"cell_userfine.h"
 
 namespace Ui {
 class dlg_user;
@@ -31,7 +31,7 @@ private:
     cell_bookhis *m_hisPage;
     cell_booknote *m_notePage;
     Cell_booklist *m_listPage;
-
+    cell_userfine *m_finePage;
 
 };
 

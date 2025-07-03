@@ -1,4 +1,3 @@
-#include "dlg_login.h"
 #include "dlg_user.h"
 #include "ui_dlg_user.h"
 #include<QPushButton>
@@ -6,11 +5,12 @@
 #include"cell_bookhis.h"
 dlg_user::dlg_user(int _user_id, QWidget *parent)
     : QDialog(parent)
-    , ui(new Ui::dlg_user)
+    , user_id(_user_id)
+    ,ui(new Ui::dlg_user)
     ,m_hisPage(nullptr)
     ,m_notePage(nullptr)
     ,m_listPage(nullptr)
-    ,user_id(_user_id)
+    ,m_finePage(nullptr)
 {
     ui->setupUi(this);
     initpage();
@@ -26,14 +26,16 @@ void dlg_user::initpage()
     m_hisPage=new cell_bookhis(this);
     m_notePage =new cell_booknote(this);
     m_listPage =new Cell_booklist(this);
+    m_finePage =new cell_userfine(this);
     m_listPage->user_id = this->user_id;
     m_notePage->user_id = this->user_id;
     m_hisPage->user_id = this->user_id;
+    m_finePage->user_id = this->user_id;
     ui->stackedWidget->addWidget(m_listPage);
     ui->stackedWidget->addWidget(m_hisPage);
     ui->stackedWidget->addWidget(m_notePage);
+    ui->stackedWidget->addWidget(m_finePage);
     ui->stackedWidget->setCurrentIndex(0);
-    qDebug()<<"!!!"<<user_id;
     auto l=ui->tool->children();
     for(auto it:l){
         if(it->objectName().contains("btn")){
@@ -45,25 +47,29 @@ void dlg_user::initpage()
 }
 void dlg_user::dealMenu(){
 
-    qDebug()<<sender()->objectName();
+    //qDebug()<<sender()->objectName();
     auto str=sender()->objectName();
     do{
         if("btn_bookhis"==str){
             ui->stackedWidget->setCurrentIndex(1);
             m_hisPage->initPage();
             break;
-
         }
         if("btn_booknote"==str){
             ui->stackedWidget->setCurrentIndex(2);
+            m_notePage->initpage();
             break;
         }
         if("btn_booklist"==str){
             ui->stackedWidget->setCurrentIndex(0);
+            m_listPage->initpage();
             break;
-
         }
-
+        if("btn_finelist"==str){
+            ui->stackedWidget->setCurrentIndex(3);
+            m_finePage->initpage();
+            break;
+        }
     }while(false);
 
 }

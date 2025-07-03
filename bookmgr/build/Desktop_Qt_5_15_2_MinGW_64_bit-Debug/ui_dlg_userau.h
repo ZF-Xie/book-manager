@@ -113,8 +113,6 @@ public:
         co_sta->addItem(QString());
         co_sta->addItem(QString());
         co_sta->addItem(QString());
-        co_sta->addItem(QString());
-        co_sta->addItem(QString());
         co_sta->setObjectName(QString::fromUtf8("co_sta"));
 
         gridLayout_2->addWidget(co_sta, 5, 1, 1, 1);
@@ -163,10 +161,8 @@ public:
         label_5->setText(QCoreApplication::translate("dlg_userADD", "\347\224\265\350\257\235\345\217\267\347\240\201", nullptr));
         label_6->setText(QCoreApplication::translate("dlg_userADD", "\344\277\241\347\224\250\347\212\266\346\200\201", nullptr));
         co_sta->setItemText(0, QCoreApplication::translate("dlg_userADD", "\350\211\257\345\245\275", nullptr));
-        co_sta->setItemText(1, QCoreApplication::translate("dlg_userADD", "\345\255\230\345\234\250\344\271\246\347\261\215\351\200\276\346\234\237\345\275\222\350\277\230\345\216\206\345\217\262", nullptr));
-        co_sta->setItemText(2, QCoreApplication::translate("dlg_userADD", "\345\255\230\345\234\250\344\271\246\347\261\215\344\270\242\345\244\261\345\216\206\345\217\262", nullptr));
-        co_sta->setItemText(3, QCoreApplication::translate("dlg_userADD", "\345\255\230\345\234\250\344\271\246\347\261\215\351\200\276\346\234\237\344\270\224\344\270\242\345\244\261\345\216\206\345\217\262", nullptr));
-        co_sta->setItemText(4, QString());
+        co_sta->setItemText(1, QCoreApplication::translate("dlg_userADD", "\345\255\230\345\234\250\346\234\252\346\224\257\344\273\230\347\232\204\347\275\232\346\254\276", nullptr));
+        co_sta->setItemText(2, QString());
 
         btu_ok->setText(QCoreApplication::translate("dlg_userADD", "\347\241\256\345\256\232", nullptr));
         btu_no->setText(QCoreApplication::translate("dlg_userADD", "\345\217\226\346\266\210", nullptr));

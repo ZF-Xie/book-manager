@@ -91,17 +91,7 @@
      </item>
      <item>
       <property name="text">
-       <string>存在书籍逾期归还历史</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>存在书籍丢失历史</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>存在书籍逾期且丢失历史</string>
+       <string>存在未支付的罚款</string>
       </property>
      </item>
      <item>

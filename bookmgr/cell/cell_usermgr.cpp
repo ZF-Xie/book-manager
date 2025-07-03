@@ -23,28 +23,26 @@ Cell_UserMgr::~Cell_UserMgr()
 
 void Cell_UserMgr::initPage(QString strCondition)
 {
+    //查询数据库并显示
+    auto l=SqlMgr::getInstance()->getUser(strCondition);
+    m_model.clear();
+    m_model.setHorizontalHeaderLabels(QStringList{"用户ID","用户名","权限","实名","电话号码","信用状态"});
+    for(int i =0;i<l.size();i++)
     {
-        //查询数据库并显示
-        auto l=SqlMgr::getInstance()->getUser(strCondition);
-        m_model.clear();
-        m_model.setHorizontalHeaderLabels(QStringList{"用户ID","用户名","权限","实名","电话号码","信用状态"});
-        for(int i =0;i<l.size();i++)
-        {
-            QList<QStandardItem*> items;
+        QList<QStandardItem*> items;
 
-            for(int j=0;j<l[i].size();j++)
+        for(int j=0;j<l[i].size();j++)
+        {
+            if(l[i].size()==7)
             {
-                if(l[i].size()==7)
+                if(j<2||j>2)
                 {
-                    if(j<2||j>2)
-                    {
-                        items.append(new QStandardItem(l[i][j]));
-                    }
+                    items.append(new QStandardItem(l[i][j]));
                 }
             }
-
-            m_model.appendRow(items);
         }
+
+        m_model.appendRow(items);
     }
 }
 

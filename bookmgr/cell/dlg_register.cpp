@@ -36,7 +36,6 @@ void dlg_register::on_btn_confirm_clicked()
         return;
     }
     auto ret = sql_login::getInstance()->Register(strName, strPass, strTname, strPhone);
-    qDebug()<<ret;
     if(ret == 0)
     {
         QMessageBox::critical(this, "注册失败", "用户已存在", QMessageBox::Ok);

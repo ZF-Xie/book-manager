@@ -1,7 +1,6 @@
 #include "cell_booklist.h"
 #include "ui_cell_booklist.h"
 #include"lib/sqluserdata.h"
-#include"book_br.h"
 
 #include <QMessageBox>
 Cell_booklist::Cell_booklist(QWidget *parent)
@@ -19,7 +18,7 @@ void Cell_booklist::initpage(QString strCondition)
 {
     auto l=Sqluserdata::getInstance()->getBooks(strCondition);
     m_model.clear();
-    m_model.setHorizontalHeaderLabels(QStringList{"图书id","图书名称","作者","类型1","类型2","价格","数量","剩余数量"});
+    m_model.setHorizontalHeaderLabels(QStringList{"图书id","图书名称","作者","类型1","类型2","价格","数量","剩余数量","存放地点"});
     for (int i=0;i<l.size();i++){
         QList<QStandardItem*>items;
         for(int j=0;j<l[i].size();j++){

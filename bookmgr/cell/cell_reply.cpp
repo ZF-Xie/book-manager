@@ -17,7 +17,7 @@ void Cell_Reply::initpage(QString strCondition)
 {
     auto l = SqlMgr::getInstance()->getNote(strCondition);
     m_model.clear();
-    m_model.setHorizontalHeaderLabels(QStringList{"留言id","用户id","内容","提交时间","回复内容","回复状态"});
+    m_model.setHorizontalHeaderLabels(QStringList{"留言id","用户id","用户名称","内容","提交时间","回复内容","回复状态"});
     for (int i=0;i<l.size();i++){
         QList<QStandardItem*>items;
         for(int j=0;j<l[i].size();j++){
@@ -34,7 +34,7 @@ Cell_Reply::~Cell_Reply()
 
 void Cell_Reply::on_lineEdit_textChanged(const QString &arg1)
 {
-    QString strCond=QString("where user_id like '%%1%' or submit_date like '%%1%' or status like '%%1%'").arg(arg1);
+    QString strCond=QString("where user_id like '%%1%' or content like '%%1%' or submit_date like '%%1%' or feedback.status like '%%1%'").arg(arg1);
     initpage(strCond);
 }
 
@@ -46,7 +46,7 @@ void Cell_Reply::on_pushButton_clicked()
     {
         return;
     }
-    auto content = m_model.item(r, 2)->text();
+    auto content = m_model.item(r, 3)->text();
     win_reply w(m_model.item(r, 0)->text().toInt(), content);
     w.exec();
     initpage();
@@ -56,6 +56,10 @@ void Cell_Reply::on_pushButton_clicked()
 void Cell_Reply::on_pushButton_2_clicked()
 {
     int r = ui->tableView->currentIndex().row();
+    if(r < 0)
+    {
+        return;
+    }
     auto feedback_id = m_model.item(r, 0)->text().toInt();
     SqlMgr::getInstance()->deleteNote(feedback_id);
     initpage();
