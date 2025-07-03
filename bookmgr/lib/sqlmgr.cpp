@@ -306,7 +306,7 @@ void SqlMgr::deleteNote(int feedback_id)
 QVector<QStringList> SqlMgr::getfineRecord(QString strCondition)
 {
     QSqlQuery q(m_db);
-    QString strSql =QString("select * from fine_id %1").arg(strCondition);
+    QString strSql =QString("select * from fine %1").arg(strCondition);
 
     QVector<QStringList> vec;
     bool ret =q.exec(strSql);
@@ -334,7 +334,7 @@ QVector<QStringList> SqlMgr::getfineRecord(QString strCondition)
 void SqlMgr::clearfineRecord()
 {
     QSqlQuery q(m_db);
-    QString strSql=QString("delete from fine_id ");
+    QString strSql=QString("delete from fine ");
     bool ret=q.exec(strSql);
     strSql=QString("delete from sqlite_sequence where name ='fine_id' ");
     q.exec(strSql);
